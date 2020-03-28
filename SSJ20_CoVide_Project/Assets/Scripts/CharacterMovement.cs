@@ -13,32 +13,35 @@ public class CharacterMovement : MonoBehaviour
     public float downSpeed = 1f;
     public float horizontalSpeed = 1f;
 
-    public Rigidbody2D rb;
-
+    private Rigidbody2D rb;
+    private BoxCollider2D coll;
+    public Collider2D them;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 speed = new Vector2();
-        if (Input.GetKey(up))
+        bool touchingThem = coll.IsTouching(them);
+        if (Input.GetKey(up) && (!touchingThem || (them.transform.position - transform.position).y < coll.size.y - 0.01f))
         {
             speed += Vector2.up * upSpeed;
         }
-        if (Input.GetKey(left))
+        if (Input.GetKey(left) && (!touchingThem || -(them.transform.position - transform.position).x < coll.size.x - 0.01f))
         {
             speed += Vector2.left * horizontalSpeed;
         }
-        if (Input.GetKey(down))
+        if (Input.GetKey(down) && (!touchingThem || -(them.transform.position - transform.position).y < coll.size.y - 0.01f))
         {
             speed += Vector2.down * downSpeed;
         }
-        if (Input.GetKey(right))
+        if (Input.GetKey(right) && (!touchingThem || (them.transform.position - transform.position).x < coll.size.x - 0.01f))
         {
             speed += Vector2.right * horizontalSpeed;
         }
