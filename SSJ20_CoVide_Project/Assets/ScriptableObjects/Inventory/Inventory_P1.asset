@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf7ab6662af192479bd805ec1b6bb7f, type: 3}
   m_Name: Inventory_P1
   m_EditorClassIdentifier: 
-  inventorySlots: []
+  clearListOnExitApplication: 0
+  inventorySlots:
+  - item: {fileID: 11400000, guid: d791b8592781ea141b9429dc8359a21f, type: 2}
+    amount: 113

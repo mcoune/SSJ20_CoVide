@@ -230,7 +230,7 @@ MonoBehaviour:
   rotateItems: 304
   interacteWithItem: 306
   throwPoint: {fileID: 813827160}
-  loadingPositinOffset: {x: 1, y: 1, z: 1}
+  loadingPositinOffset: {x: 2, y: 2, z: 0}
   maxLoadTime: 3
   inventory: {fileID: 11400000, guid: fac5f729d97bc98498a349c1c35d14de, type: 2}
 --- !u!114 &500916012

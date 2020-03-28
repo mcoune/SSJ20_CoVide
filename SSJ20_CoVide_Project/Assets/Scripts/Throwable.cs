@@ -24,6 +24,7 @@ public class Throwable : MonoBehaviour
             return;
         }
 
+        Debug.Log("Destroy");
         Destroy(gameObject);
     }
 }

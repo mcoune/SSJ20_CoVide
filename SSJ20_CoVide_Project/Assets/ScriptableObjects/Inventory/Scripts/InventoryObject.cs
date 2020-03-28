@@ -8,6 +8,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
+    public bool clearListOnExitApplication;
+
     /// <summary>
     /// List of all inventory slots
     /// </summary>
@@ -26,14 +28,12 @@ public class InventoryObject : ScriptableObject
             if(inventorySlot != null)
             {
                 inventorySlot.AddAmount(_amount);
-                //Debug.Log($"Add {inventorySlot.item.collectablePrefab.name} item to stack, new amount {inventorySlot.amount}");
             }
 
             return;
         }
 
         inventorySlots.Add(new InventorySlot(_item, _amount));
-        //Debug.Log($"Added new {_item.type.ToString()} item.");
     }
 
     /// <summary>
@@ -50,5 +50,16 @@ public class InventoryObject : ScriptableObject
         inventorySlots.RemoveAt(0);
         inventorySlots.Add(tempSlot);
         Debug.Log($"Selected Item is: {inventorySlots.First().item.name}");
+    }
+
+    /// <summary>
+    /// Called on application quit
+    /// </summary>
+    private void OnApplicationQuit()
+    {
+        if(clearListOnExitApplication)
+        {
+            inventorySlots.Clear();
+        }
     }
 }
