@@ -13,4 +13,13 @@ public class ResourceObject : ItemObject
     {
         type = ItemType.Resource;
     }
+
+    /// <summary>
+    /// Throws the item
+    /// </summary>
+    public void Throw()
+    {        
+        GameObject tmp = Instantiate(throwablePrefab);
+        throw new System.NotImplementedException();
+    }
 }

@@ -13,4 +13,12 @@ public class ConsumableObject : ItemObject
     {
         type = ItemType.Consumable;
     }
+
+    /// <summary>
+    /// Consumes the object
+    /// </summary>
+    public void Consume()
+    {
+        throw new System.NotImplementedException();
+    }
 }

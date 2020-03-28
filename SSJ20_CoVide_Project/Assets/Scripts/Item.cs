@@ -17,14 +17,16 @@ public class Item : MonoBehaviour
     public void Awake()
     {
         if(item)
-        {
+        {            
             spriteRenderer = GetComponent<SpriteRenderer>();
 
             if(spriteRenderer)
             {
-                Debug.Log("Allocating sprite");
-                spriteRenderer.sprite = item.sprite;
+                var collactableRenderer = item.collectablePrefab.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = collactableRenderer.sprite;
             }
         }
     }
+
+    public GameObject Owner { get; set; }
 }
