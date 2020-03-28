@@ -26,16 +26,19 @@ public class InventoryObject : ScriptableObject
             if(inventorySlot != null)
             {
                 inventorySlot.AddAmount(_amount);
-                Debug.Log($"Add {inventorySlot.item.type.ToString()} item to stack, new amount {inventorySlot.amount}");
+                //Debug.Log($"Add {inventorySlot.item.collectablePrefab.name} item to stack, new amount {inventorySlot.amount}");
             }
 
             return;
         }
 
         inventorySlots.Add(new InventorySlot(_item, _amount));
-        Debug.Log($"Added new {_item.type.ToString()} item.");
+        //Debug.Log($"Added new {_item.type.ToString()} item.");
     }
 
+    /// <summary>
+    /// Rotates the items
+    /// </summary>
     public void RotateItem()
     {
         if(inventorySlots.Count < 1)
