@@ -38,6 +38,6 @@ public class Player : MonoBehaviour
     /// </summary>
     private void OnApplicationQuit()
     {
-        inventory.inventorySlots.Clear();
-    }
+        inventory.inventorySlots.Clear();        
+    }    
 }

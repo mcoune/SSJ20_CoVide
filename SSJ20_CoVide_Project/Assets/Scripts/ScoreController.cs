@@ -9,11 +9,6 @@ public class ScoreController : MonoBehaviour
 {
     public ScoreObject scoreObject;
 
-    public void Awake()
-    {
-        ClearDelivery();
-        ClearScore();
-    }
     /// <summary>
     /// Adds points to th score
     /// </summary>
@@ -70,5 +65,14 @@ public class ScoreController : MonoBehaviour
     {
         scoreObject.deliveries = 0;
         Debug.Log($"New delivery count: {scoreObject.deliveries}");
+    }
+
+    /// <summary>
+    /// Called on application quit
+    /// </summary>
+    private void OnApplicationQuit()
+    {
+        ClearScore();
+        ClearDelivery();
     }
 }

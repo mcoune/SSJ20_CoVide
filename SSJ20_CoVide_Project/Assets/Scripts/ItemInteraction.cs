@@ -8,7 +8,6 @@ public class ItemInteraction : MonoBehaviour
     public KeyCode rotateItems;
     public KeyCode interacteWithItem;
     public Transform throwPoint;
-    public Vector3 loadingPositinOffset;
 
     public float maxLoadTime = 3f;
     /// <summary>
@@ -47,6 +46,7 @@ public class ItemInteraction : MonoBehaviour
             interactionStarted = true;
             holdDownStartTime = Time.time;
             LoadInteraction();
+            ShowTrajectory(true);
         }
 
         if (Input.GetKeyUp(interacteWithItem))
@@ -67,7 +67,7 @@ public class ItemInteraction : MonoBehaviour
         if(loadedGameObject)
         {
             loadedGameObject.transform.rotation = gameObject.transform.rotation;
-            loadedGameObject.transform.position = gameObject.transform.position + loadingPositinOffset;
+            loadedGameObject.transform.position = throwPoint.position;
         }
     }
 
@@ -104,6 +104,8 @@ public class ItemInteraction : MonoBehaviour
                 inventory.inventorySlots.Remove(selectedItem);
             }
         }
+
+        ShowTrajectory(false);
     }
 
     private void LoadInteraction()
@@ -123,7 +125,7 @@ public class ItemInteraction : MonoBehaviour
         if (selectedItem.item is ResourceObject)
         {
             var itemPrefab = selectedItem.item.collectablePrefab;
-            loadedGameObject = Instantiate(itemPrefab, gameObject.transform.position + loadingPositinOffset, gameObject.transform.rotation);
+            loadedGameObject = Instantiate(itemPrefab, throwPoint.position, throwPoint.rotation);
 
             var item = loadedGameObject.GetComponent<Item>();
             if(item)
@@ -136,5 +138,16 @@ public class ItemInteraction : MonoBehaviour
     private InventorySlot GetSelectedInventorySlot()
     {
         return inventory.inventorySlots.FirstOrDefault();
+    }
+
+    public void ShowTrajectory(bool setActive)
+    {
+        var child = throwPoint.transform.GetChild(0);
+        if(child == null)
+        {
+            return;
+        }
+
+        child.gameObject.SetActive(setActive);
     }
 }
