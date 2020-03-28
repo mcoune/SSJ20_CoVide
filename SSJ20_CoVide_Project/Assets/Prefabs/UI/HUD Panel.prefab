@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1131055529851179145}
   - component: {fileID: 1131055529851179191}
   - component: {fileID: 1131055529851179144}
+  - component: {fileID: 1386272978}
   m_Layer: 5
   m_Name: ScorePanel 2
   m_TagString: Untagged
@@ -74,6 +75,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1386272978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131055529851179146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17deeb6429afb2a4dbb763bf610b7638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 11400000, guid: bddf14b024038fe4b88c9dac762af035, type: 2}
+  scoreText: {fileID: 1131055531286523482}
 --- !u!1 &1131055530122781447
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +965,7 @@ GameObject:
   - component: {fileID: 1131055531372222189}
   - component: {fileID: 1131055531372222187}
   - component: {fileID: 1131055531372222188}
+  - component: {fileID: 1519555728}
   m_Layer: 5
   m_Name: ScorePanel 1
   m_TagString: Untagged
@@ -1013,6 +1029,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1519555728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131055531372222190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17deeb6429afb2a4dbb763bf610b7638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 11400000, guid: 8a96a560d2961e24fa8219dd9704cc18, type: 2}
+  scoreText: {fileID: 1131055530240439491}
 --- !u!1 &1737438435274343243
 GameObject:
   m_ObjectHideFlags: 0
