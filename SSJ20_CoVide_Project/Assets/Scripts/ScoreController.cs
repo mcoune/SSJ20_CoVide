@@ -9,6 +9,11 @@ public class ScoreController : MonoBehaviour
 {
     public ScoreObject scoreObject;
 
+    public void Awake()
+    {
+        ClearDelivery();
+        ClearScore();
+    }
     /// <summary>
     /// Adds points to th score
     /// </summary>
@@ -33,5 +38,31 @@ public class ScoreController : MonoBehaviour
     public void ClearScore()
     {
         scoreObject.score = 0;
+    }
+
+    /// <summary>
+    /// Adds points to th score
+    /// </summary>
+    /// <param name="points"></param>
+    public void AddDelivery(int points)
+    {
+        scoreObject.deliveries += points;
+    }
+
+    /// <summary>
+    /// Subtracts points from the score
+    /// </summary>
+    /// <param name="points"></param>
+    public void SubDelivery(int points)
+    {
+        scoreObject.deliveries -= points;
+    }
+
+    /// <summary>
+    /// Clears the score to zero
+    /// </summary>
+    public void ClearDelivery()
+    {
+        scoreObject.deliveries = 0;
     }
 }

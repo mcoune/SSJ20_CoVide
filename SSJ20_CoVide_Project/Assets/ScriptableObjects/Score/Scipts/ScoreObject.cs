@@ -9,4 +9,5 @@ using UnityEngine;
 public class ScoreObject : ScriptableObject
 {
     public int score;
+    public int deliveries;
 }
