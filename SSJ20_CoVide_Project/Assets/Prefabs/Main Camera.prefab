@@ -334,8 +334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickups: []
   obstacles:
-  - {fileID: 6497007882540445346, guid: defffafd1df8bef469566c71a77c2a4f, type: 3}
+  - {fileID: 5502878375793610057, guid: 5daea9135b2d5bd48828d3b48a7fc1c8, type: 3}
   road: []
   houses: []
   minObstacleTime: 1
-  maxObstacleTime: 1
+  maxObstacleTime: 3
