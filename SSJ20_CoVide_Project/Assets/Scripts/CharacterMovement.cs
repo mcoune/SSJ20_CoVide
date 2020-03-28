@@ -17,6 +17,8 @@ public class CharacterMovement : MonoBehaviour
     private BoxCollider2D coll;
     private Collider2D them;
 
+    public float camSpeed=1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 speed = new Vector2();
+        Vector2 speed = Vector2.up*camSpeed;
         if (Input.GetKey(up) && (them == null || (them.transform.position - transform.position).y < coll.size.y - 0.01f))
         {
             speed += Vector2.up * upSpeed;
