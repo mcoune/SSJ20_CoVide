@@ -230,7 +230,7 @@ MonoBehaviour:
   rotateItems: 304
   interacteWithItem: 306
   throwPoint: {fileID: 813827160}
-  loadingPositinOffset: {x: 0, y: 0, z: 0}
+  loadingPositinOffset: {x: 1, y: 1, z: 1}
   maxLoadTime: 3
   inventory: {fileID: 11400000, guid: fac5f729d97bc98498a349c1c35d14de, type: 2}
 --- !u!114 &500916012
@@ -375,7 +375,7 @@ MonoBehaviour:
   rotateItems: 0
   interacteWithItem: 0
   throwPoint: {fileID: 1574206313}
-  loadingPositinOffset: {x: 0, y: 0, z: 0}
+  loadingPositinOffset: {x: 1, y: 1, z: 1}
   maxLoadTime: 3
   inventory: {fileID: 11400000, guid: fec3d7cc45fe97842884541dc4d3ef89, type: 2}
 --- !u!114 &630510417
