@@ -14,6 +14,9 @@ public class InventoryDisplay : MonoBehaviour
     public Image nextNextItem;
     public Text amountText;
 
+    /// <summary>
+    /// Start is called at the start of the game
+    /// </summary>
     void Start()
     {
         selectedItem.sprite = defaultSprite;
