@@ -11,13 +11,15 @@ public class ObjectSpawner : MonoBehaviour
 
     private float obstacleTimer;
     public float minObstacleTime = 1;
-    public float maxObstacleTime = 10;
+    public float maxObstacleTime = 3;
 
+    float size;
 
     // Start is called before the first frame update
     void Start()
     {
         obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
+        size = GetComponent<Camera>().orthographicSize;
     }
 
     // Update is called once per frame
@@ -25,8 +27,8 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (obstacleTimer < Time.time)
         {
-            GameObject obst = GameObject.Instantiate(obstacles[0]);
-            obst.transform.position = transform.position + new Vector3(Random.Range(-3, 3), 5.5f, 10);
+            GameObject obst = GameObject.Instantiate(obstacles[(int)(Random.value*obstacles.Length)]);
+            obst.GetComponent<MapObject>().Spawn(size + transform.position.y, true);
             obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
         }
     }
