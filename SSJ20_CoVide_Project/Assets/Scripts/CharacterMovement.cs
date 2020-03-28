@@ -13,6 +13,8 @@ public class CharacterMovement : MonoBehaviour
     public float downSpeed = 1f;
     public float horizontalSpeed = 1f;
 
+    public Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,21 +25,23 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 speed = new Vector2();
         if (Input.GetKey(up))
         {
-            transform.position += Vector3.up * upSpeed;
+            speed += Vector2.up * upSpeed;
         }
         if (Input.GetKey(left))
         {
-            transform.position += Vector3.left * horizontalSpeed;
+            speed += Vector2.left * horizontalSpeed;
         }
         if (Input.GetKey(down))
         {
-            transform.position += Vector3.down * downSpeed;
+            speed += Vector2.down * downSpeed;
         }
         if (Input.GetKey(right))
         {
-            transform.position += Vector3.right * horizontalSpeed;
+            speed += Vector2.right * horizontalSpeed;
         }
+        rb.velocity = speed;
     }
 }
