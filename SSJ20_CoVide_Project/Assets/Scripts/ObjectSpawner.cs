@@ -26,7 +26,7 @@ public class ObjectSpawner : MonoBehaviour
         if (obstacleTimer < 0)
         {
 
-            obstacleTimer = Random.Range(minObstacleTime,maxObstacleTime);
+            obstacleTimer = Random.Range(minObstacleTime, maxObstacleTime);
         }
     }
 }
