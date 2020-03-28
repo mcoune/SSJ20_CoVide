@@ -88,8 +88,11 @@ public class ItemInteraction : MonoBehaviour
 
             if(loadedGameObject != null)
             {
-                var item = selectedItem.item.throwablePrefab;
-                Instantiate(item, throwPoint.position, throwPoint.rotation);
+                var item = selectedItem.item.throwablePrefab;                
+                var throwable = Instantiate(item, throwPoint.position, throwPoint.rotation);
+
+                var t = throwable.GetComponent<Throwable>();
+                t.owner = gameObject;
             }
 
             if(selectedItem.amount > 1)

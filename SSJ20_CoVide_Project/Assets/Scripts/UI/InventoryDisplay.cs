@@ -30,8 +30,6 @@ public class InventoryDisplay : MonoBehaviour
     {
         if(inventory.inventorySlots.Count < 1)
         {
-            
-            
             return;
         }
 

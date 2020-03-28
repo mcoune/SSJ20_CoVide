@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58339c53ec5ee9a4aa73db6ea8d50573, type: 3}
-  m_Name: Wasser
+  m_Name: Dummy
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  points: 20
+  throwablePrefab: {fileID: 707781000322566844, guid: a6116e4449132ba499292cdc025dbdab,
+    type: 3}
+  collectablePrefab: {fileID: 5435901638606756529, guid: b38f32d4af57aa940bcefcc1a87a7376,
+    type: 3}
   type: 1
