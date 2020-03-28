@@ -11,6 +11,6 @@ public class ResourceObject : ItemObject
     /// </summary>
     public void Awake()
     {
-        Type = ItemType.Resource;
+        type = ItemType.Resource;
     }
 }

@@ -11,6 +11,6 @@ public class ConsumableObject : ItemObject
     /// </summary>
     public void Awake()
     {
-        Type = ItemType.Consumable;
+        type = ItemType.Consumable;
     }
 }
