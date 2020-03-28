@@ -6,6 +6,7 @@ using UnityEngine;
 /// </summary>
 public abstract class ItemObject : ScriptableObject
 {
-    public Sprite sprite;
-    public ItemType type;
+    public GameObject throwablePrefab;
+    public GameObject collectablePrefab;
+    public ItemType type;    
 }
