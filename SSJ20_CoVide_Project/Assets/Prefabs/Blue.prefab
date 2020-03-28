@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5791361779172869806}
   m_Layer: 0
   m_Name: Blue
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   upSpeed: 3.5
   downSpeed: 1.5
   horizontalSpeed: 2
-  them: {fileID: 0}
+  camSpeed: 1
 --- !u!212 &2548204182457908626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4544264403853902662}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1cd95c6fae669ac4c824f6ff703e8441, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
