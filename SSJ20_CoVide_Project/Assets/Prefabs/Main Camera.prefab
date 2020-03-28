@@ -377,9 +377,8 @@ MonoBehaviour:
   - {fileID: 2076413912816605961, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
   - {fileID: 2076413912816605961, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
   - {fileID: 2076413912816605961, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
-  streetAlternating:
-  - {fileID: 4100287878561732329, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
-  - {fileID: 2076413912816605961, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
+  streetSide: {fileID: 4100287878561732329, guid: 194e9abf63e403041b73f747ae8f0c4e,
+    type: 3}
   obstacles:
   - {fileID: 5502878375793610057, guid: 5daea9135b2d5bd48828d3b48a7fc1c8, type: 3}
   houses: []

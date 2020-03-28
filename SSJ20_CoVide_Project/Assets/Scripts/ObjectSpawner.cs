@@ -8,9 +8,9 @@ public class ObjectSpawner : MonoBehaviour
     public Sprite sidewalk;
     public Sprite streetMiddle;
     public Sprite[] streetRandom;
-    public Sprite[] streetAlternating;
+    public Sprite streetSide;
 
-    private int streetAlternatingCounter = 0;
+    private int streetSideCounter = 0;
     private float lastStreetDrawn;
 
 
@@ -28,7 +28,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
         size = GetComponent<Camera>().orthographicSize;
-
+        lastStreetDrawn = -2 * size - 0.5f;
     }
 
     // Update is called once per frame
@@ -42,28 +42,49 @@ public class ObjectSpawner : MonoBehaviour
         }
         while (transform.position.y - lastStreetDrawn >= 0.5f)
         {
-            CreateStreetRow(lastStreetDrawn+size+0.75f);
+            CreateStreetRow(lastStreetDrawn + size + 0.75f);
             lastStreetDrawn += 0.5f;
         }
     }
 
     void CreateStreetRow(float posY)
     {
-        GameObject go;
-        for (int i = -3; i < 3; i++)
+        GameObject go = CreateSingleSprite(streetMiddle);
+        go.transform.position = new Vector3(0, posY, -0.1f);
+        for (int i = -4; i < 4; i++)
         {
-            go = CreateSingleSprite(streetRandom[(int)(Random.value * streetRandom.Length)], 0);
+            go = CreateSingleSprite(streetRandom[(int)(Random.value * streetRandom.Length)]);
             go.transform.position = new Vector3(0.5f * i + 0.25f, posY, 0);
+        }
+        streetSideCounter--;
+        if (streetSideCounter < 0)
+        {
+            go = CreateSingleSprite(streetSide);
+            go.transform.position = new Vector3(-1.75f, posY, -0.1f);
+            go = CreateSingleSprite(streetSide);
+            go.transform.position = new Vector3(1.75f, posY, -0.1f);
+
+            streetSideCounter = 1;
+        }
+        go = CreateSingleSprite(sidewalk);
+        go.transform.position = new Vector3(-2.25f, posY, 0);
+        go = CreateSingleSprite(sidewalk);
+        go.transform.position = new Vector3(2.25f, posY, 0);
+        for(int i = 0; i < 5;i++)
+        {
+            go = CreateSingleSprite(grassRandom[(int)(Random.value * grassRandom.Length)]);
+            go.transform.position = new Vector3(0.5f * i + 2.75f, posY, 0);
+            go = CreateSingleSprite(grassRandom[(int)(Random.value * grassRandom.Length)]);
+            go.transform.position = new Vector3(-0.5f * i - 2.75f, posY, 0);
         }
     }
 
-    GameObject CreateSingleSprite(Sprite sprite, int orderInLayer)
+    GameObject CreateSingleSprite(Sprite sprite)
     {
         GameObject go = new GameObject();
         SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
         sr.sprite = sprite;
         sr.sortingLayerName = "Background";
-        sr.sortingOrder = orderInLayer;
         Rigidbody2D rb = go.AddComponent<Rigidbody2D>();
         rb.isKinematic = true;
         BoxCollider2D bc = go.AddComponent<BoxCollider2D>();
