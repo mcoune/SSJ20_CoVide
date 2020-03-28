@@ -8,6 +8,7 @@ public class ItemInteraction : MonoBehaviour
     public KeyCode rotateItems;
     public KeyCode interacteWithItem;
     public Transform throwPoint;
+    public Vector3 loadingPositinOffset;
 
     public float maxLoadTime = 3f;
     /// <summary>
@@ -62,6 +63,12 @@ public class ItemInteraction : MonoBehaviour
                 Interact();
             }
         }
+
+        if(loadedGameObject)
+        {
+            loadedGameObject.transform.rotation = gameObject.transform.rotation;
+            loadedGameObject.transform.position = gameObject.transform.position + loadingPositinOffset;
+        }
     }
 
     /// <summary>
@@ -70,7 +77,7 @@ public class ItemInteraction : MonoBehaviour
     private void Interact()
     {
         var selectedItem = GetSelectedInventorySlot();
-        if (selectedItem == null)
+        if (selectedItem == null)           
         {
             return;
         }
@@ -79,8 +86,11 @@ public class ItemInteraction : MonoBehaviour
         {
             Destroy(loadedGameObject);
 
-            var item = selectedItem.item.throwablePrefab;
-            Instantiate(item, throwPoint.position, throwPoint.rotation);
+            if(loadedGameObject != null)
+            {
+                var item = selectedItem.item.throwablePrefab;
+                Instantiate(item, throwPoint.position, throwPoint.rotation);
+            }
 
             if(selectedItem.amount > 1)
             {
@@ -110,7 +120,7 @@ public class ItemInteraction : MonoBehaviour
         if (selectedItem.item is ResourceObject)
         {
             var itemPrefab = selectedItem.item.collectablePrefab;
-            loadedGameObject = Instantiate(itemPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            loadedGameObject = Instantiate(itemPrefab, gameObject.transform.position + loadingPositinOffset, gameObject.transform.rotation);
 
             var item = loadedGameObject.GetComponent<Item>();
             if(item)
