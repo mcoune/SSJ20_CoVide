@@ -25,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.simulated = true;
         Vector2 speed = new Vector2();
         if (Input.GetKey(up))
         {
@@ -43,5 +44,6 @@ public class CharacterMovement : MonoBehaviour
             speed += Vector2.right * horizontalSpeed;
         }
         rb.velocity = speed;
+        rb.simulated = false;
     }
 }
