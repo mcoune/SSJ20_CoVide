@@ -6,7 +6,6 @@ public class CameraMover : MonoBehaviour
 {
 
     public float speed = 2.3f;
-    public CharacterMovement[] players;
 
     private Rigidbody2D rb;
 
@@ -14,8 +13,9 @@ public class CameraMover : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        foreach (CharacterMovement cm in players)
-            cm.camSpeed = speed;
+        GameObject[] players=GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject p in players)
+            p.GetComponent<CharacterMovement>().camSpeed = speed;
     }
 
     // Update is called once per frame
