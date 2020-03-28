@@ -17,16 +17,17 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        obstacleTimer = Random.Range(minObstacleTime, maxObstacleTime);
+        obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (obstacleTimer < 0)
+        if (obstacleTimer < Time.time)
         {
-
-            obstacleTimer = Random.Range(minObstacleTime, maxObstacleTime);
+            GameObject obst = GameObject.Instantiate(obstacles[0]);
+            obst.transform.position = transform.position + new Vector3(Random.Range(-3, 3), 5.5f, 10);
+            obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
         }
     }
 }

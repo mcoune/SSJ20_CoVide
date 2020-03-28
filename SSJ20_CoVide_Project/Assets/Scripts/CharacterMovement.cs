@@ -46,6 +46,7 @@ public class CharacterMovement : MonoBehaviour
         {
             speed += Vector2.right * horizontalSpeed;
         }
+        print(speed);
         rb.velocity = speed;
     }
 
