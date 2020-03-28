@@ -15,7 +15,9 @@ public class CharacterMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D coll;
-    public Collider2D them;
+    private Collider2D them;
+
+    public float camSpeed=1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,24 +29,35 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 speed = new Vector2();
-        bool touchingThem = coll.IsTouching(them);
-        if (Input.GetKey(up) && (!touchingThem || (them.transform.position - transform.position).y < coll.size.y - 0.01f))
+        Vector2 speed = Vector2.up*camSpeed;
+        if (Input.GetKey(up) && (them == null || (them.transform.position - transform.position).y < coll.size.y - 0.01f))
         {
             speed += Vector2.up * upSpeed;
         }
-        if (Input.GetKey(left) && (!touchingThem || -(them.transform.position - transform.position).x < coll.size.x - 0.01f))
+        if (Input.GetKey(left) && (them == null || -(them.transform.position - transform.position).x < coll.size.x - 0.01f))
         {
             speed += Vector2.left * horizontalSpeed;
         }
-        if (Input.GetKey(down) && (!touchingThem || -(them.transform.position - transform.position).y < coll.size.y - 0.01f))
+        if (Input.GetKey(down) && (them == null || -(them.transform.position - transform.position).y < coll.size.y - 0.01f))
         {
             speed += Vector2.down * downSpeed;
         }
-        if (Input.GetKey(right) && (!touchingThem || (them.transform.position - transform.position).x < coll.size.x - 0.01f))
+        if (Input.GetKey(right) && (them == null || (them.transform.position - transform.position).x < coll.size.x - 0.01f))
         {
             speed += Vector2.right * horizontalSpeed;
         }
         rb.velocity = speed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+            them = collision.collider;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+            them = null;
     }
 }
