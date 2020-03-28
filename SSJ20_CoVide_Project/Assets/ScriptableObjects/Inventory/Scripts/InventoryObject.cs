@@ -21,16 +21,18 @@ public class InventoryObject : ScriptableObject
     public void AddItem(ItemObject _item, int _amount)
     {
         if (inventorySlots.Any(x => x.item == _item))
-        {
-            inventorySlots.FirstOrDefault(x => x.item == _item).AddAmount(_amount);
+        {            
+            var inventorySlot = inventorySlots.FirstOrDefault(x => x.item == _item);
+            if(inventorySlot != null)
+            {
+                inventorySlot.AddAmount(_amount);
+                Debug.Log($"Add {inventorySlot.item.type.ToString()} item to stack, new amount {inventorySlot.amount}");
+            }
+
             return;
         }
 
         inventorySlots.Add(new InventorySlot(_item, _amount));
-    }
-
-    public void RemoveItem(ItemObject _item, int _amount)
-    {
-
+        Debug.Log($"Added new {_item.type.ToString()} item.");
     }
 }
