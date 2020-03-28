@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// The Invenctory
     /// </summary>
-    public InventoryObject Inventory;
+    public InventoryObject inventory;
 
     /// <summary>
     /// Called on trigger enter
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         var item = _other.GetComponent<Item>();
         if(item)
         {            
-            Inventory.AddItem(item.item, 1);
+            inventory.AddItem(item.item, 1);
             Destroy(_other.gameObject);
         }
     }
@@ -31,6 +31,6 @@ public class Player : MonoBehaviour
     /// </summary>
     private void OnApplicationQuit()
     {
-        Inventory.inventorySlots.Clear();
+        inventory.inventorySlots.Clear();
     }
 }

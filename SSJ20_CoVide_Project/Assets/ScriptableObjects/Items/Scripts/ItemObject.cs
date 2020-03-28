@@ -7,5 +7,5 @@ using UnityEngine;
 public abstract class ItemObject : ScriptableObject
 {
     public Sprite sprite;
-    public ItemType type;
+    public ItemType type;    
 }

@@ -9,6 +9,8 @@ public class InventorySlot
     /// </summary>
     public ItemObject item;
 
+    public bool isSelected;
+
     /// <summary>
     /// the amount of items
     /// </summary>

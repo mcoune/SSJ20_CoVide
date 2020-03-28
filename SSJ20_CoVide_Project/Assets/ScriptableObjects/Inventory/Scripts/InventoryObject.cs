@@ -35,4 +35,17 @@ public class InventoryObject : ScriptableObject
         inventorySlots.Add(new InventorySlot(_item, _amount));
         Debug.Log($"Added new {_item.type.ToString()} item.");
     }
+
+    public void RotateItem()
+    {
+        if(inventorySlots.Count < 1)
+        {
+            return;
+        }
+
+        var tempSlot = inventorySlots.First();
+        inventorySlots.RemoveAt(0);
+        inventorySlots.Add(tempSlot);
+        Debug.Log($"Selected Item is: {inventorySlots.First().item.name}");
+    }
 }
