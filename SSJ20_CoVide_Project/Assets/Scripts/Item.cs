@@ -22,6 +22,7 @@ public class Item : MonoBehaviour
 
             if(spriteRenderer)
             {
+                Debug.Log("Allocating sprite");
                 spriteRenderer.sprite = item.sprite;
             }
         }

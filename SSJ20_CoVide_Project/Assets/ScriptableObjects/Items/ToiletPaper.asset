@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58339c53ec5ee9a4aa73db6ea8d50573, type: 3}
   m_Name: ToiletPaper
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 08ff8d98c8705404398d394260b5ea00, type: 3}
   type: 1
