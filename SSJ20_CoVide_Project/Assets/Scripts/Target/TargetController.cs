@@ -53,7 +53,10 @@ public class TargetController : MonoBehaviour
         {
             SetItemRenderer();
         }
-        transform.GetChild(2).gameObject.SetActive(_isEnable);
+        if (transform.childCount > 1)
+        {
+            transform.GetChild(2).gameObject.SetActive(_isEnable);
+        }
     }
 
     public void OnDestroy()
