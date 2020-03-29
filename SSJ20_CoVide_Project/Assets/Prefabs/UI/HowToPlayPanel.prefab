@@ -119,9 +119,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 785011640373468503}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 8889710745797984003}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -545,7 +545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: W A S D
+  m_Text: " W \nA S D"
 --- !u!1 &785011641121435719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Up, Down, Left, Right
+  m_Text: " \u2191\n \u2190 \u2193 \u2192"
 --- !u!1 &785011642162284986
 GameObject:
   m_ObjectHideFlags: 0
