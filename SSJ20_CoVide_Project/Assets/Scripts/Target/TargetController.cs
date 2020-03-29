@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetController : MonoBehaviour
-{
+{    
     public ResourcesContainerObject resourcesContainer;
     public SpriteRenderer itemRenderer;
 
     private List<TargetArea> targetAreas;
     private ItemObject requestedResource;
+    private bool isEnabled;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,19 +38,45 @@ public class TargetController : MonoBehaviour
         var collectablePrefab = requestedResource.collectablePrefab;
         var prefabRenderer = collectablePrefab.GetComponent<SpriteRenderer>();
         itemRenderer.sprite = prefabRenderer.sprite;
-
     }
 
     /// <summary>
     /// Enables the score for all target areas
     /// </summary>
     /// <param name="isEnable"></param>
-    public void EnableScoreing(bool isEnable)
+    public void EnableScoreing(bool _isEnable)
     {
-        targetAreas.ForEach(x => x.scoreIsEnabled = isEnable);
-        if(isEnable)
+        isEnabled = _isEnable;
+        targetAreas.ForEach(x => x.scoreIsEnabled = _isEnable);
+        if(_isEnable)
         {
             SetItemRenderer();
+        }
+    }
+
+    public void OnDestroy()
+    {
+        if (isEnabled)
+        {
+            Debug.Log("OnDestroy");
+            var scoreControllers = FindObjectsOfType<ScoreController>();
+            if (scoreControllers == null)
+            {
+                return;
+            }
+
+            var sc = scoreControllers.FirstOrDefault(x => x.gameObject.tag == "MainCamera");
+            if (sc == null)
+            {
+                return;
+            }
+
+            Debug.Log("Found Main Camera");
+            if (targetAreas.Any(x => !x.resourceDelivered))
+            {
+                Debug.Log("Strike");
+                sc.AddStrike(1);
+            }
         }
     }
 }
