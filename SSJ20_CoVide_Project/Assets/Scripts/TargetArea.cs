@@ -41,7 +41,7 @@ public class TargetArea : MonoBehaviour
         }
         else
         {
-            scoreController.AddScore(-requestResource.penaltiy);
+            scoreController.AddScore(-requestResource.penalty);
         }
 
 

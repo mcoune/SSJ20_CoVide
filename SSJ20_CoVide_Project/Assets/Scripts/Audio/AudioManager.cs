@@ -45,6 +45,7 @@ public class AudioManager : MonoBehaviour
         var sound = sounds.FirstOrDefault(x => x.name == name);
         if(sound == null)
         {
+            Debug.LogWarning($"Could not found sound {name}");
             return;
         }
 

@@ -21,7 +21,6 @@ public class ScoreController : MonoBehaviour
     public void AddScore(int points)
     {
         scoreObject.score += points;
-        Debug.Log($"New score count: {scoreObject.score}");
     }
 
     /// <summary>
@@ -31,7 +30,6 @@ public class ScoreController : MonoBehaviour
     public void SubScore(int points)
     {
         scoreObject.score -= points;
-        Debug.Log($"New score count: {scoreObject.score}");
     }
 
     /// <summary>
@@ -40,7 +38,6 @@ public class ScoreController : MonoBehaviour
     public void ClearScore()
     {
         scoreObject.score = 0;
-        Debug.Log($"New score count: {scoreObject.score}");
     }
 
     /// <summary>
@@ -50,7 +47,6 @@ public class ScoreController : MonoBehaviour
     public void AddDelivery(int points)
     {
         scoreObject.deliveries += points;
-        Debug.Log($"New delivery count: {scoreObject.deliveries}");
     }
 
     /// <summary>
@@ -60,7 +56,6 @@ public class ScoreController : MonoBehaviour
     public void SubDelivery(int points)
     {
         scoreObject.deliveries -= points;
-        Debug.Log($"New delivery count: {scoreObject.deliveries}");
     }
 
     /// <summary>
@@ -69,6 +64,5 @@ public class ScoreController : MonoBehaviour
     public void ClearDelivery()
     {
         scoreObject.deliveries = 0;
-        Debug.Log($"New delivery count: {scoreObject.deliveries}");
     }
 }
