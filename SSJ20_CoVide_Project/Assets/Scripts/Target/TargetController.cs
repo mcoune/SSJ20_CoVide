@@ -20,6 +20,7 @@ public class TargetController : MonoBehaviour
 
         targetAreas = transform.GetComponentsInChildren<TargetArea>().ToList();
         SetResource();
+        transform.GetChild(2).gameObject.SetActive(false);
     }
     /// <summary>
     /// Sets the requested resource
@@ -52,6 +53,7 @@ public class TargetController : MonoBehaviour
         {
             SetItemRenderer();
         }
+        transform.GetChild(2).gameObject.SetActive(_isEnable);
     }
 
     public void OnDestroy()
