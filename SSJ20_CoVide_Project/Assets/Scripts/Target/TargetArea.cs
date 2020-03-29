@@ -35,15 +35,13 @@ public class TargetArea : MonoBehaviour
             return;
         }
 
-        if(!resourceDelivered)
+        if(!resourceDelivered || !scoreIsEnabled)
         {
             if (throwable.item == requestResource)
             {
-                if(scoreIsEnabled)
-                {
-                    scoreController.AddDelivery(1);
-                    scoreController.AddScore(requestResource.points + ScoreMultiplier);
-                }
+                scoreController.AddDelivery(1);
+                scoreController.AddScore(requestResource.points + ScoreMultiplier);
+                
             }
             else
             {
