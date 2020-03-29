@@ -693,6 +693,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8500451817021375666, guid: 7f9aa8b8a6b99b042a7ff25c233b04bd,
+        type: 3}
+      propertyPath: startAreSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500451817021375666, guid: 7f9aa8b8a6b99b042a7ff25c233b04bd,
+        type: 3}
+      propertyPath: minStartPickupTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500451817021375666, guid: 7f9aa8b8a6b99b042a7ff25c233b04bd,
+        type: 3}
+      propertyPath: maxStartPickupTime
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8500451817021375671, guid: 7f9aa8b8a6b99b042a7ff25c233b04bd,
         type: 3}
       propertyPath: m_LocalPosition.x
