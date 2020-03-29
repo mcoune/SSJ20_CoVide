@@ -22,7 +22,7 @@ public class ItemInteraction : MonoBehaviour
     public void Awake()
     {
         var player = GetComponent<Player>();
-        if(player != null)
+        if (player != null)
         {
             inventory = player.inventory;
         }
@@ -30,18 +30,18 @@ public class ItemInteraction : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         if (Input.GetKeyDown(rotateItems))
         {
             inventory.RotateItem();
         }
 
-        if(inventory.inventorySlots.Count < 1)
+        if (inventory.inventorySlots.Count < 1)
         {
             return;
         }
 
-        if(Input.GetKeyDown(interacteWithItem))
+        if (Input.GetKeyDown(interacteWithItem))
         {
             interactionStarted = true;
             holdDownStartTime = Time.time;
@@ -50,11 +50,11 @@ public class ItemInteraction : MonoBehaviour
         }
 
         if (Input.GetKeyUp(interacteWithItem))
-        {            
+        {
             Interact();
         }
 
-        if(interactionStarted)
+        if (interactionStarted)
         {
             float holdDownTime = Time.time - holdDownStartTime;
             Debug.Log("HoldTime: " + holdDownTime);
@@ -66,7 +66,7 @@ public class ItemInteraction : MonoBehaviour
             }
         }
 
-        if(loadedGameObject)
+        if (loadedGameObject)
         {
             loadedGameObject.transform.rotation = throwPoint.rotation;
             loadedGameObject.transform.position = throwPoint.position;
@@ -79,7 +79,7 @@ public class ItemInteraction : MonoBehaviour
     private void Interact()
     {
         var selectedItem = GetSelectedInventorySlot();
-        if (selectedItem == null)           
+        if (selectedItem == null)
         {
             return;
         }
@@ -88,18 +88,18 @@ public class ItemInteraction : MonoBehaviour
         {
             Destroy(loadedGameObject);
 
-            if(loadedGameObject != null)
+            if (loadedGameObject != null)
             {
-                var item = selectedItem.item.throwablePrefab;                
+                var item = selectedItem.item.throwablePrefab;
                 var throwable = Instantiate(item, throwPoint.position, throwPoint.rotation);
-
+                ShowHand(false);
                 FindObjectOfType<AudioManager>().Play("ThrowItem");
 
                 var t = throwable.GetComponent<Throwable>();
                 t.owner = gameObject;
             }
 
-            if(selectedItem.amount > 1)
+            if (selectedItem.amount > 1)
             {
                 selectedItem.amount--;
             }
@@ -114,7 +114,7 @@ public class ItemInteraction : MonoBehaviour
 
     private void LoadInteraction()
     {
-        if(!interactionStarted)
+        if (!interactionStarted)
         {
             return;
         }
@@ -130,9 +130,10 @@ public class ItemInteraction : MonoBehaviour
         {
             var itemPrefab = selectedItem.item.collectablePrefab;
             loadedGameObject = Instantiate(itemPrefab, throwPoint.position, throwPoint.rotation);
+            ShowHand(true);
 
             var item = loadedGameObject.GetComponent<Item>();
-            if(item)
+            if (item)
             {
                 item.Owner = gameObject;
             }
@@ -153,5 +154,18 @@ public class ItemInteraction : MonoBehaviour
         }
 
         child.gameObject.SetActive(setActive);
+    }
+
+    public void ShowHand(bool showHand)
+    {
+        var renderers = throwPoint.GetComponentsInChildren<SpriteRenderer>();
+        foreach (var renderer in renderers)
+        {
+            if(renderer.tag == "Hand")
+            {
+                renderer.enabled = showHand;
+                break;
+            }
+        }
     }
 }
