@@ -8,8 +8,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
-    public bool clearListOnExitApplication;
-
     /// <summary>
     /// List of all inventory slots
     /// </summary>
@@ -58,9 +56,6 @@ public class InventoryObject : ScriptableObject
     /// </summary>
     private void OnApplicationQuit()
     {
-        if(clearListOnExitApplication)
-        {
-            inventorySlots.Clear();
-        }
+        inventorySlots.Clear();        
     }
 }
