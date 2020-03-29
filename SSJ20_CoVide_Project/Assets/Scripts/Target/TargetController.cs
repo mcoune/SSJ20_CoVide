@@ -18,8 +18,8 @@ public class TargetController : MonoBehaviour
         requestedResource = resourcesContainer.resourceContainer[r.Next(resourcesContainer.resourceContainer.Count)];
 
         targetAreas = transform.GetComponentsInChildren<TargetArea>().ToList();
-    }    
-
+        SetResource();
+    }
     /// <summary>
     /// Sets the requested resource
     /// </summary>
@@ -47,5 +47,9 @@ public class TargetController : MonoBehaviour
     public void EnableScoreing(bool isEnable)
     {
         targetAreas.ForEach(x => x.scoreIsEnabled = isEnable);
+        if(isEnable)
+        {
+            SetItemRenderer();
+        }
     }
 }
