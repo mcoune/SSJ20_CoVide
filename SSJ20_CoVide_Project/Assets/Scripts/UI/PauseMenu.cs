@@ -30,9 +30,9 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isPaused)
+        if (Input.GetKeyDown(KeyCode.Space) )
         {
-            DeactivateMenu();
+                DeactivateMenu();
         }
     }
 
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     void ActivateMenu()
     {
         Time.timeScale = 0;
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
         pauseMenuUI.SetActive(true);
         isPaused = true;
 
@@ -50,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void DeactivateMenu()
     {
         Time.timeScale = 1;
-        AudioListener.pause = false;
+        //AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         isPaused = false;
     }

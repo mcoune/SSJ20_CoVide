@@ -608,21 +608,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1867551359}
     m_Modifications:
-    - target: {fileID: 785011640373468498, guid: dcb48dea2088e5041ac077646c382350,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1867551363}
-    - target: {fileID: 785011640373468498, guid: dcb48dea2088e5041ac077646c382350,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeactivateMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 785011640373468498, guid: dcb48dea2088e5041ac077646c382350,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 785011641059239127, guid: dcb48dea2088e5041ac077646c382350,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -958,11 +943,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HowToPlayPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 8889710745797984003, guid: dcb48dea2088e5041ac077646c382350,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb48dea2088e5041ac077646c382350, type: 3}
 --- !u!224 &1788745231 stripped
@@ -1091,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1788745232}
-  isPaused: 1
+  isPaused: 0
 --- !u!1001 &1872829278
 PrefabInstance:
   m_ObjectHideFlags: 0

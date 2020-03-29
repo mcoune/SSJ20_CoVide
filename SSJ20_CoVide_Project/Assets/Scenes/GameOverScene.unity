@@ -385,7 +385,7 @@ PrefabInstance:
     - target: {fileID: 2763073253562991604, guid: 376eb6281416d5f4d93adc1f4ba075d4,
         type: 3}
       propertyPath: m_Name
-      value: TitleTextPanel
+      value: GameOverPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2763073253562991611, guid: 376eb6281416d5f4d93adc1f4ba075d4,
         type: 3}

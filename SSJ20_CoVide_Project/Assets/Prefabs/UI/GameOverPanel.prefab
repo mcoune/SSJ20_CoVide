@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 2763073253562991611}
   - component: {fileID: 2763073253562991609}
   - component: {fileID: 2763073253562991610}
+  - component: {fileID: 3610003205066446130}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -232,6 +233,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3610003205066446130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763073253562991604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb05b5962836d7459a35f3e14483935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreObject1: {fileID: 11400000, guid: 8a96a560d2961e24fa8219dd9704cc18, type: 2}
+  scoreObject2: {fileID: 11400000, guid: bddf14b024038fe4b88c9dac762af035, type: 2}
 --- !u!1 &2763073253838511259
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +336,6 @@ GameObject:
   - component: {fileID: 2763073253937809985}
   - component: {fileID: 2763073253937809986}
   - component: {fileID: 2763073253937809987}
-  - component: {fileID: 2763073253937810012}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -428,7 +442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2763073253937810012}
+      - m_Target: {fileID: 3610003205066446130}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -439,20 +453,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2763073253937810012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763073253937810014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb05b5962836d7459a35f3e14483935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreObject1: {fileID: 11400000, guid: 8a96a560d2961e24fa8219dd9704cc18, type: 2}
-  scoreObject2: {fileID: 11400000, guid: bddf14b024038fe4b88c9dac762af035, type: 2}
 --- !u!1 &2763073253951837388
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +465,6 @@ GameObject:
   - component: {fileID: 2763073253951837424}
   - component: {fileID: 2763073253951837425}
   - component: {fileID: 2763073253951837426}
-  - component: {fileID: 2763073253951837431}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -572,9 +571,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2763073253951837431}
-        m_MethodName: LoadScene
-        m_Mode: 3
+      - m_Target: {fileID: 3610003205066446130}
+        m_MethodName: RestartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -583,20 +582,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2763073253951837431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763073253951837388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb05b5962836d7459a35f3e14483935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreObject1: {fileID: 0}
-  scoreObject2: {fileID: 0}
 --- !u!1 &2763073254224685957
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 785011640373468496}
   - component: {fileID: 785011640373468497}
   - component: {fileID: 785011640373468498}
-  - component: {fileID: 785011640373468503}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -130,20 +129,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &785011640373468503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785011640373468524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb05b5962836d7459a35f3e14483935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreObject1: {fileID: 0}
-  scoreObject2: {fileID: 0}
 --- !u!1 &785011640450649010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,7 +1669,7 @@ GameObject:
   - component: {fileID: 6743813571855810784}
   - component: {fileID: 876973686212788078}
   m_Layer: 5
-  m_Name: HowToPlayPanel
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
