@@ -35,7 +35,7 @@ public class TargetArea : MonoBehaviour
             return;
         }
 
-        if(!resourceDelivered || !scoreIsEnabled)
+        if(!resourceDelivered || scoreIsEnabled)
         {
             if (throwable.item == requestResource)
             {
