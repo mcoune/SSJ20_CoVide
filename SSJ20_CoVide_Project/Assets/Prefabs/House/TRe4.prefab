@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcesContainer: {fileID: 11400000, guid: 1e2bb1656811d53458a50ad3e5fbd053, type: 2}
-  itemRenderer: {fileID: 0}
+  itemRenderer: {fileID: 2980667872920125055}
 --- !u!1 &1782664352659811921
 GameObject:
   m_ObjectHideFlags: 0
