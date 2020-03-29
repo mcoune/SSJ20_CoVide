@@ -346,6 +346,9 @@ MonoBehaviour:
   housesRight:
   - {fileID: 6484786552624529379, guid: 0bd5c60f6965d374e87b98fa508382ba, type: 3}
   - {fileID: 662636884412106872, guid: f7ec5474375c3774291eb175ebff1fc8, type: 3}
+  streetLights:
+  - {fileID: 1973497270545488655, guid: 58cbc2b9af9c3f0429457c00e7a98c2e, type: 3}
+  - {fileID: 4647611364242033355, guid: ae7337a5510866f4ebed7ac7971121de, type: 3}
   obstacles:
   - {fileID: 609519236054245941, guid: 16e6a3b87ce209a4881b6af9799f99b1, type: 3}
   minObstacleTime: 1
