@@ -121,6 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+
 --- !u!1 &531352405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8500451817021375818, guid: 7f9aa8b8a6b99b042a7ff25c233b04bd,
@@ -496,6 +497,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 789396239}
+  - {fileID: 188934564}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
