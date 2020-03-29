@@ -9,17 +9,24 @@ public class ObjectSpawner : MonoBehaviour
     public Sprite streetMiddle;
     public Sprite[] streetRandom;
     public Sprite streetSide;
-
     private int streetSideCounter = 0;
-    private float lastStreetDrawn;
+    private float nextStreetToDraw;
 
+    public GameObject[] housesLeft;
+    private float nextHouseLeftToDraw;
+
+    public GameObject[] housesRight;
+    private float nextHouseRightToDraw;
 
     public GameObject[] obstacles;
-    public GameObject[] houses;
-
     private float obstacleTimer;
     public float minObstacleTime = 1;
     public float maxObstacleTime = 3;
+
+    public GameObject[] pickup;
+    private float pickupTimer;
+    public float minPickupTime = 1;
+    public float maxPickupTime = 3;
 
     float size;
 
@@ -28,22 +35,37 @@ public class ObjectSpawner : MonoBehaviour
     {
         obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
         size = GetComponent<Camera>().orthographicSize;
-        lastStreetDrawn = -2 * size - 0.5f;
+        nextStreetToDraw = -2 * size;
+        nextHouseLeftToDraw = -2 * size;
+        nextHouseRightToDraw = -2 * size;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameObject go;
+        while (transform.position.y - nextStreetToDraw >= 0)
+        {
+            CreateStreetRow(nextStreetToDraw + size + 0.25f);
+            nextStreetToDraw += 0.5f;
+        }
+        while (transform.position.y - nextHouseLeftToDraw >= 0)
+        {
+            go = GameObject.Instantiate(housesLeft[(int)(Random.value * housesLeft.Length)]);
+            go.GetComponent<MapObject>().Spawn(size + nextHouseLeftToDraw, false);
+            nextHouseLeftToDraw += go.GetComponent<MapObject>().height;
+        }
+        while (transform.position.y - nextHouseRightToDraw >= 0)
+        {
+            go = GameObject.Instantiate(housesRight[(int)(Random.value * housesRight.Length)]);
+            go.GetComponent<MapObject>().Spawn(size + nextHouseRightToDraw, false);
+            nextHouseRightToDraw += go.GetComponent<MapObject>().height;
+        }
         if (obstacleTimer < Time.time)
         {
-            GameObject obst = GameObject.Instantiate(obstacles[(int)(Random.value * obstacles.Length)]);
-            obst.GetComponent<MapObject>().Spawn(size + transform.position.y, true);
+            go = GameObject.Instantiate(obstacles[(int)(Random.value * obstacles.Length)]);
+            go.GetComponent<MapObject>().Spawn(size + transform.position.y, true);
             obstacleTimer = Time.time + Random.Range(minObstacleTime, maxObstacleTime);
-        }
-        while (transform.position.y - lastStreetDrawn >= 0.5f)
-        {
-            CreateStreetRow(lastStreetDrawn + size + 0.75f);
-            lastStreetDrawn += 0.5f;
         }
     }
 
@@ -70,7 +92,7 @@ public class ObjectSpawner : MonoBehaviour
         go.transform.position = new Vector3(-2.25f, posY, 0);
         go = CreateSingleSprite(sidewalk);
         go.transform.position = new Vector3(2.25f, posY, 0);
-        for(int i = 0; i < 5;i++)
+        for (int i = 0; i < 5; i++)
         {
             go = CreateSingleSprite(grassRandom[(int)(Random.value * grassRandom.Length)]);
             go.transform.position = new Vector3(0.5f * i + 2.75f, posY, 0);
