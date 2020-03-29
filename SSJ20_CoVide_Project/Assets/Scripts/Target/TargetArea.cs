@@ -8,6 +8,7 @@ public class TargetArea : MonoBehaviour
 
     [HideInInspector]
     public ItemObject requestResource;
+    public SpriteRenderer itemRenderer;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,7 +39,7 @@ public class TargetArea : MonoBehaviour
             scoreController.AddScore(-requestResource.penalty);
         }
 
-
+        itemRenderer.enabled = false;
         Destroy(other.gameObject);
     }
 }
