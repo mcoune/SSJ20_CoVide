@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5951314421419848698}
   - component: {fileID: 5832920510787147242}
   - component: {fileID: 1798967344279604616}
+  - component: {fileID: -6957886979755814228}
   m_Layer: 0
   m_Name: Water_Throwable
   m_TagString: Projectile
@@ -137,3 +138,22 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: 5951314421419848698}
   item: {fileID: 11400000, guid: c6ab645f339063145b71fe91e6dbe695, type: 2}
+--- !u!95 &-6957886979755814228
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447028910144371240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab9932db6e459b446974a42d291a5b30, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
