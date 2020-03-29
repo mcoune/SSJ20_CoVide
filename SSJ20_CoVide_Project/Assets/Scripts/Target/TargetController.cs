@@ -10,6 +10,7 @@ public class TargetController : MonoBehaviour
 
     private List<TargetArea> targetAreas;
     private ItemObject requestedResource;
+    private bool isEnabled;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,10 +44,11 @@ public class TargetController : MonoBehaviour
     /// Enables the score for all target areas
     /// </summary>
     /// <param name="isEnable"></param>
-    public void EnableScoreing(bool isEnable)
+    public void EnableScoreing(bool _isEnable)
     {
-        targetAreas.ForEach(x => x.scoreIsEnabled = isEnable);
-        if(isEnable)
+        isEnabled = _isEnable;
+        targetAreas.ForEach(x => x.scoreIsEnabled = _isEnable);
+        if(_isEnable)
         {
             SetItemRenderer();
         }
@@ -54,19 +56,26 @@ public class TargetController : MonoBehaviour
 
     public void OnDestroy()
     {
-        var scoreController = FindObjectOfType<ScoreController>();
-        if(scoreController == null)
+        if (isEnabled)
         {
-            return;
-        }
+            Debug.Log("OnDestroy");
+            var scoreControllers = FindObjectsOfType<ScoreController>();
+            if (scoreControllers == null)
+            {
+                return;
+            }
 
-        if(scoreController.gameObject.tag == "MainCamera")
-        {
+            var sc = scoreControllers.FirstOrDefault(x => x.gameObject.tag == "MainCamera");
+            if (sc == null)
+            {
+                return;
+            }
+
             Debug.Log("Found Main Camera");
-            if(targetAreas.Any(x => !x.resourceDelivered))
+            if (targetAreas.Any(x => !x.resourceDelivered))
             {
                 Debug.Log("Strike");
-                scoreController.AddStrike(1);
+                sc.AddStrike(1);
             }
         }
     }
