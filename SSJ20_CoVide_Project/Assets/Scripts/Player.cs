@@ -11,6 +11,16 @@ public class Player : MonoBehaviour
     /// The Invenctory
     /// </summary>
     public InventoryObject inventory;
+    public SpriteRenderer backpackRenderer;
+
+    public Sprite backpackEmpty;
+    public Sprite backpackMedium;
+    public Sprite backpackFull;
+
+    public void Awake()
+    {
+        SetBackpack();
+    }
 
     /// <summary>
     /// Called on trigger enter
@@ -28,10 +38,40 @@ public class Player : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("Pickup");
 
+            SetBackpack();
             inventory.AddItem(item.item, 1);
             item.Owner = gameObject;
             Destroy(_other.gameObject);
             return;
         }    
+    }
+
+    private void SetBackpack()
+    {
+        int itemCount = GetInventoryItemCount();
+        if(itemCount > 10)
+        {            
+            backpackRenderer.sprite = backpackFull;
+            return;
+        }
+
+        if (itemCount > 5)
+        {
+            backpackRenderer.sprite = backpackMedium;
+            return;
+        }
+
+        backpackRenderer.sprite = backpackEmpty;
+    }
+
+    private int GetInventoryItemCount()
+    {
+        int itemCount = 0;
+        foreach (var item in inventory.inventorySlots)
+        {
+            itemCount += item.amount;
+        }
+
+        return itemCount;
     }
 }
