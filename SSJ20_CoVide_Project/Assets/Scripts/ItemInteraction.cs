@@ -46,6 +46,7 @@ public class ItemInteraction : MonoBehaviour
             interactionStarted = true;
             holdDownStartTime = Time.time;
             LoadInteraction();
+            ShowTrajectory(true);
         }
 
         if (Input.GetKeyUp(interacteWithItem))
@@ -56,6 +57,8 @@ public class ItemInteraction : MonoBehaviour
         if(interactionStarted)
         {
             float holdDownTime = Time.time - holdDownStartTime;
+            Debug.Log("HoldTime: " + holdDownTime);
+
             if (holdDownTime > maxLoadTime)
             {
                 Debug.Log("Max load time reached.");
@@ -105,6 +108,8 @@ public class ItemInteraction : MonoBehaviour
                 inventory.inventorySlots.Remove(selectedItem);
             }
         }
+
+        ShowTrajectory(false);
     }
 
     private void LoadInteraction()
@@ -137,5 +142,16 @@ public class ItemInteraction : MonoBehaviour
     private InventorySlot GetSelectedInventorySlot()
     {
         return inventory.inventorySlots.FirstOrDefault();
+    }
+
+    public void ShowTrajectory(bool setActive)
+    {
+        var child = throwPoint.transform.GetChild(0);
+        if (child == null)
+        {
+            return;
+        }
+
+        child.gameObject.SetActive(setActive);
     }
 }
