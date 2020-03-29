@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetArea : MonoBehaviour
-{
-    public ResourcesContainerObject resourcesContainer;
+{    
     public int ScoreMultiplier;
-    private ItemObject requestResource;
 
-    public void Awake()
-    {
-        System.Random r = new System.Random();
-        requestResource = resourcesContainer.resourceContainer[r.Next(resourcesContainer.resourceContainer.Count)];
-    }
+    [HideInInspector]
+    public ItemObject requestResource;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,7 +35,7 @@ public class TargetArea : MonoBehaviour
         }
         else
         {
-            scoreController.AddScore(-requestResource.penaltiy);
+            scoreController.AddScore(-requestResource.penalty);
         }
 
 
