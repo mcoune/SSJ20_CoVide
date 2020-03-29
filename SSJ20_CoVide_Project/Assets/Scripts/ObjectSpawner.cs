@@ -113,10 +113,12 @@ public class ObjectSpawner : MonoBehaviour
             {
                 go = CreateSingleSprite(finishLine);
                 go.transform.position = new Vector3(0.5f * i + 0.25f, Mathf.Round(4 * (transform.position.y + size + 0.75f)) / 4f, -0.2f);
+                if (!finishLineDrawn)
+                    go.transform.tag = "FinishLine";
                 go = CreateSingleSprite(finishLine);
                 go.transform.position = new Vector3(0.5f * i + 0.25f, Mathf.Round(4 * (transform.position.y + size + 1.25f)) / 4f, -0.2f);
+                finishLineDrawn = true;
             }
-            finishLineDrawn = true;
         }
     }
 
