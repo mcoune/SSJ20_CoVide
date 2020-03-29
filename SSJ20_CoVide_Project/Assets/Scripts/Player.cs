@@ -6,11 +6,18 @@ using UnityEngine;
 /// The <see cref="Player"/> class.
 /// </summary>
 public class Player : MonoBehaviour
-{
+{    
     /// <summary>
     /// The Invenctory
     /// </summary>
     public InventoryObject inventory;
+
+    public int defaultValue;
+
+    public void Awake()
+    {
+        inventory.inventorySlots.ForEach(x => x.amount = defaultValue);
+    }
 
     /// <summary>
     /// Called on trigger enter

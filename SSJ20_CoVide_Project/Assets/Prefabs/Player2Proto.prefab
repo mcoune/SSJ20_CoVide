@@ -792,6 +792,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreObject: {fileID: 11400000, guid: bddf14b024038fe4b88c9dac762af035, type: 2}
+  isGroupScore: 0
+  maxStrikes: 0
 --- !u!114 &8202713222773682957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,13 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: fec3d7cc45fe97842884541dc4d3ef89, type: 2}
-  backpackRenderer: {fileID: 0}
-  backpackEmpty: {fileID: 3442068442337511252, guid: c74e272c6e22a044a978123412762519,
-    type: 3}
-  backpackMedium: {fileID: -6093996245399293692, guid: c74e272c6e22a044a978123412762519,
-    type: 3}
-  backpackFull: {fileID: 9077195470952112843, guid: c74e272c6e22a044a978123412762519,
-    type: 3}
+  defaultValue: 6
 --- !u!95 &189541572
 Animator:
   serializedVersion: 3
