@@ -47,72 +47,72 @@ MonoBehaviour:
   - name: Buff
     clip: {fileID: 8300000, guid: e2f749fd9aafc3d4a905f7a751c4c65e, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 0320aa72ae0ee134d84e1f5214352b6a, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ChangeItem
     clip: {fileID: 8300000, guid: 5cf947891f057ed4caa85dd8057e0645, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: LevelAmbience
     clip: {fileID: 8300000, guid: a348d5760e5cb834093fedbcdf14d715, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: NpcCatch
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 62f19403f7bbcbc4b8643d6232c20752, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Pickup
     clip: {fileID: 8300000, guid: c0c8a2a040c82ac41a92f2f2594424b5, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerFalls
     clip: {fileID: 8300000, guid: 859e092edaa79584c84f6098348f0287, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerLose
     clip: {fileID: 8300000, guid: 2927d9a078bfe8549a5d2956ff0f4b59, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerWins
     clip: {fileID: 8300000, guid: 22b8af0da98abff4aa979fc23028ec78, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SegwayLoop
     clip: {fileID: 8300000, guid: ab26cf3a9727db44d90ae24dd6c6b493, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: ThrowItem
     clip: {fileID: 8300000, guid: 29d26ed446c6a1e428df7333bfd87231, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: d988a0b0ff0230e4bb39fb78bca004e4, type: 3}
-    volume: 1
-    pitch: 0
+    volume: 0.1
+    pitch: 1
     loop: 1
     source: {fileID: 0}
