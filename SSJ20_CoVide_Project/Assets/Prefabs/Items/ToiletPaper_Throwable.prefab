@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8400222078413095790}
   - component: {fileID: 8572170722722030974}
   - component: {fileID: 4536236236251544860}
+  - component: {fileID: -38981006512080889}
   m_Layer: 0
   m_Name: ToiletPaper_Throwable
   m_TagString: Projectile
@@ -134,6 +135,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a081e5dab371cf54086575feaaee09dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   rb: {fileID: 8400222078413095790}
   item: {fileID: 11400000, guid: d791b8592781ea141b9429dc8359a21f, type: 2}
+--- !u!95 &-38981006512080889
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707781000322566844}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6c48fd87c1d32540bd82cfab05bc4ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

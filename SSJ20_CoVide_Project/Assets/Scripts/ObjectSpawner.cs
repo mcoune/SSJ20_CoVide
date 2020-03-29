@@ -77,6 +77,8 @@ public class ObjectSpawner : MonoBehaviour
             go.GetComponent<MapObject>().Spawn(size + nextHouseLeftToDraw, false);
             nextHouseLeftToDraw += go.GetComponent<MapObject>().height;
             houseCount++;
+            if (houseCount < houseCounttillFinish && Random.value < 1 / 3f)
+                go.GetComponent<TargetController>().EnableScoreing(true);
         }
         while (transform.position.y - nextHouseRightToDraw >= 0)
         {
@@ -84,6 +86,8 @@ public class ObjectSpawner : MonoBehaviour
             go.GetComponent<MapObject>().Spawn(size + nextHouseRightToDraw, false);
             nextHouseRightToDraw += go.GetComponent<MapObject>().height;
             houseCount++;
+            if (houseCount < houseCounttillFinish && Random.value < 1 / 3f)
+                go.GetComponent<TargetController>().EnableScoreing(true);
         }
         while (transform.position.y - nextStreetLightToDraw >= 0)
         {

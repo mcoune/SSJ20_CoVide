@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pickup
   - Projectile
+  - Hand
   - FinishLine
   layers:
   - Default
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3941604793
+    locked: 0
+  - name: Aim
+    uniqueID: 4007052589
     locked: 0

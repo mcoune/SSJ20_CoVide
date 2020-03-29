@@ -13,6 +13,8 @@ public class CharacterMovement : MonoBehaviour
     public float downSpeed = 1f;
     public float horizontalSpeed = 1f;
 
+    public Animator animator;
+
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private Collider2D them;
@@ -46,6 +48,10 @@ public class CharacterMovement : MonoBehaviour
         {
             speed += Vector2.right * horizontalSpeed;
         }
+
+        animator.SetFloat("Speed", speed.y);
+        animator.SetFloat("SpeedDiagonal", speed.x);
+
         rb.velocity = speed;
     }
 
