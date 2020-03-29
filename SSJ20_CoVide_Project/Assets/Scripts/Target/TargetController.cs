@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetController : MonoBehaviour
-{
+{    
     public ResourcesContainerObject resourcesContainer;
     public SpriteRenderer itemRenderer;
 
@@ -37,7 +37,6 @@ public class TargetController : MonoBehaviour
         var collectablePrefab = requestedResource.collectablePrefab;
         var prefabRenderer = collectablePrefab.GetComponent<SpriteRenderer>();
         itemRenderer.sprite = prefabRenderer.sprite;
-
     }
 
     /// <summary>
@@ -50,6 +49,25 @@ public class TargetController : MonoBehaviour
         if(isEnable)
         {
             SetItemRenderer();
+        }
+    }
+
+    public void OnDestroy()
+    {
+        var scoreController = FindObjectOfType<ScoreController>();
+        if(scoreController == null)
+        {
+            return;
+        }
+
+        if(scoreController.gameObject.tag == "MainCamera")
+        {
+            Debug.Log("Found Main Camera");
+            if(targetAreas.Any(x => !x.resourceDelivered))
+            {
+                Debug.Log("Strike");
+                scoreController.AddStrike(1);
+            }
         }
     }
 }
