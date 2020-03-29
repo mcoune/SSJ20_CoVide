@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectDestroyer : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ObjectDestroyer : MonoBehaviour
             GameObject.Destroy(collision.gameObject);
         if (collision.transform.tag == "FinishLine")
         {
-
+            SceneManager.LoadScene("WinScene");
         }
     }
 }
