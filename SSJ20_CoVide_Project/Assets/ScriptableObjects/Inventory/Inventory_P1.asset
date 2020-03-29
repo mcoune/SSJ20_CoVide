@@ -15,4 +15,4 @@ MonoBehaviour:
   clearListOnExitApplication: 0
   inventorySlots:
   - item: {fileID: 11400000, guid: d791b8592781ea141b9429dc8359a21f, type: 2}
-    amount: 113
+    amount: 999
