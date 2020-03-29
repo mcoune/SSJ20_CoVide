@@ -10,12 +10,11 @@ public class MapObject : MonoBehaviour
 
     public void Spawn(float camOffset, bool isObstacle)
     {
-        transform.position = new Vector3(Random.Range(leftSpawnBorder, rightSpawnBorder), camOffset + height / 2f, 0);
-        if (isObstacle)
-        {
-            Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
-            rb.isKinematic = true;
-            gameObject.AddComponent<BoxCollider2D>();
-        }
+        transform.position = new Vector3(Mathf.Round(32 * Random.Range(leftSpawnBorder, rightSpawnBorder)) / 32f, Mathf.Round(32 * (camOffset + height / 2f)) / 32f, 0);
+
+        Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+        rb.isKinematic = true;
+        BoxCollider2D bc = gameObject.AddComponent<BoxCollider2D>();
+        bc.isTrigger = !isObstacle;
     }
 }
