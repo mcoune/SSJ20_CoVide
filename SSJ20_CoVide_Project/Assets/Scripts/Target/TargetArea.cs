@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,10 @@ public class TargetArea : MonoBehaviour
 
     [HideInInspector]
     public ItemObject requestResource;
+
+    [HideInInspector]
+    public bool scoreIsEnabled = false;
+
     public SpriteRenderer itemRenderer;
 
     private bool resourceDelivered = false;
@@ -35,8 +39,11 @@ public class TargetArea : MonoBehaviour
         {
             if (throwable.item == requestResource)
             {
-                scoreController.AddDelivery(1);
-                scoreController.AddScore(requestResource.points + ScoreMultiplier);
+                if(scoreIsEnabled)
+                {
+                    scoreController.AddDelivery(1);
+                    scoreController.AddScore(requestResource.points + ScoreMultiplier);
+                }
             }
             else
             {
@@ -44,8 +51,16 @@ public class TargetArea : MonoBehaviour
             }
         }
 
+        Transform parent = transform.parent;
+        var targetAreas = parent.GetComponentsInChildren<TargetArea>().ToList();
+        targetAreas.ForEach(x => x.enabled = false);
         itemRenderer.enabled = false;
         resourceDelivered = true;
         Destroy(other.gameObject);
+    }
+
+    public void Showitem()
+    {
+        itemRenderer.enabled = scoreIsEnabled;
     }
 }
