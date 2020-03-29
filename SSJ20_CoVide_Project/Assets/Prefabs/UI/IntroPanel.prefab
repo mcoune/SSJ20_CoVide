@@ -219,7 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreObject1: {fileID: 11400000, guid: 8a96a560d2961e24fa8219dd9704cc18, type: 2}
   scoreObject2: {fileID: 11400000, guid: bddf14b024038fe4b88c9dac762af035, type: 2}
-  sceneName: ProtoScene
+  sceneToOpen: 0
 --- !u!1 &1918868050940949945
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SPACE to Try Again
+  m_Text: SPACE to Start
 --- !u!1 &6619026951071908978
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,4 +502,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ESCAPE to Quit
+  m_Text: ESC to Quit
