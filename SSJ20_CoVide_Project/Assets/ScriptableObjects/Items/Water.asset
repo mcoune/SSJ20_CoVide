@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 1
   penalty: 1
-  throwablePrefab: {fileID: 0}
-  collectablePrefab: {fileID: 0}
+  throwablePrefab: {fileID: 3447028910144371240, guid: bf9988e9d8d471241b4e016ee002f4cc,
+    type: 3}
+  collectablePrefab: {fileID: 118669003592533160, guid: 6369de2b4ddb3154aa7fc2af1a6306b0,
+    type: 3}
   type: 1
