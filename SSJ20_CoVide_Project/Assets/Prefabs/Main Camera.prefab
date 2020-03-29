@@ -273,6 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f12b5755cb43040a7fca1a5e3b5f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houseCounttillFinish: 100
+  finishLine: {fileID: 1111757961538626347, guid: 194e9abf63e403041b73f747ae8f0c4e,
+    type: 3}
   grassRandom:
   - {fileID: 7238779745789078499, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
   - {fileID: 7409976266181831984, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
