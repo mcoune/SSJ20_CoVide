@@ -90,6 +90,8 @@ public class ItemInteraction : MonoBehaviour
                 var item = selectedItem.item.throwablePrefab;                
                 var throwable = Instantiate(item, throwPoint.position, throwPoint.rotation);
 
+                FindObjectOfType<AudioManager>().Play("ThrowItem");
+
                 var t = throwable.GetComponent<Throwable>();
                 t.owner = gameObject;
             }
