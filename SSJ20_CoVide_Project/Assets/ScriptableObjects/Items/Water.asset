@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58339c53ec5ee9a4aa73db6ea8d50573, type: 3}
+  m_Name: Water
+  m_EditorClassIdentifier: 
+  points: 1
+  penalty: 1
+  throwablePrefab: {fileID: 3447028910144371240, guid: bf9988e9d8d471241b4e016ee002f4cc,
+    type: 3}
+  collectablePrefab: {fileID: 118669003592533160, guid: 6369de2b4ddb3154aa7fc2af1a6306b0,
+    type: 3}
+  type: 1
