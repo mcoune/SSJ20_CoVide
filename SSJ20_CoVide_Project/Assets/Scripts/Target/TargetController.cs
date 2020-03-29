@@ -60,7 +60,6 @@ public class TargetController : MonoBehaviour
     {
         if (isEnabled)
         {
-            Debug.Log("OnDestroy");
             var scoreControllers = FindObjectsOfType<ScoreController>();
             if (scoreControllers == null)
             {
@@ -73,10 +72,8 @@ public class TargetController : MonoBehaviour
                 return;
             }
 
-            Debug.Log("Found Main Camera");
             if (targetAreas.Any(x => !x.resourceDelivered))
             {
-                Debug.Log("Strike");
                 sc.AddStrike(1);
             }
         }

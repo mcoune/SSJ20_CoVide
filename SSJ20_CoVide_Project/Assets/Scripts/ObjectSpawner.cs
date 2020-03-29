@@ -130,7 +130,6 @@ public class ObjectSpawner : MonoBehaviour
                 pickupTimer = Time.time + Random.Range(minStartPickupTime, maxStartPickupTime);
             }
         }
-        print(transform.position.y);
         if (!finishLineDrawn && houseCount >= houseCounttillFinish)
         {
             for (int i = -5; i < 5; i++)

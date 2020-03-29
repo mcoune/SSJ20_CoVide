@@ -48,7 +48,6 @@ public class InventoryObject : ScriptableObject
         var tempSlot = inventorySlots.First();
         inventorySlots.RemoveAt(0);
         inventorySlots.Add(tempSlot);
-        Debug.Log($"Selected Item is: {inventorySlots.First().item.name}");
     }
 
     /// <summary>
