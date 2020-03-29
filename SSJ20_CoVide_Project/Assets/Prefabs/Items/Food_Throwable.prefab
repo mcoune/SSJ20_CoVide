@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3201538816120374933}
   - component: {fileID: 3317961280363929733}
   - component: {fileID: 7353886970722466023}
+  - component: {fileID: -7770142513145532808}
   m_Layer: 0
   m_Name: Food_Throwable
   m_TagString: Projectile
@@ -137,3 +138,22 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: 3201538816120374933}
   item: {fileID: 11400000, guid: b071bae53a184ec41b09e04ec2cc9c78, type: 2}
+--- !u!95 &-7770142513145532808
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849957111960784711}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab954152146dae1498d58e84e123a79f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

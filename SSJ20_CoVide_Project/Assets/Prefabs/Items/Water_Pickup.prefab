@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 118669003592533162}
   - component: {fileID: 118669003592533140}
   - component: {fileID: 864161204317755296}
+  - component: {fileID: 331718473700307784}
   m_Layer: 1
   m_Name: Water_Pickup
   m_TagString: Pickup
@@ -113,3 +114,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
+--- !u!95 &331718473700307784
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118669003592533160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e38669f660e7f647ac8c2f9f4e93024, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
