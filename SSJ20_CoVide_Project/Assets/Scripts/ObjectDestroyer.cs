@@ -7,7 +7,7 @@ public class ObjectDestroyer : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.tag != "Player")
+        if (collision.transform.tag != "Player" && collision.gameObject.name != "LowerWall")
             GameObject.Destroy(collision.gameObject);
         if (collision.transform.tag == "FinishLine")
         {

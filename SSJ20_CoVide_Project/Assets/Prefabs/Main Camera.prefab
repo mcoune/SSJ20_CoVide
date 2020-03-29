@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 637659289}
   m_Layer: 0
   m_Name: LowerWall
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,6 +519,9 @@ MonoBehaviour:
   - {fileID: 118669003592533160, guid: 6369de2b4ddb3154aa7fc2af1a6306b0, type: 3}
   minPickupTime: 3
   maxPickupTime: 7
+  startAreSize: 0
+  minStartPickupTime: 1
+  maxStartPickupTime: 3
 --- !u!50 &8500451817021375669
 Rigidbody2D:
   serializedVersion: 4
