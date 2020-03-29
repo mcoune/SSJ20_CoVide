@@ -26,18 +26,12 @@ public class Player : MonoBehaviour
 
         if(item.Owner == null || item.Owner != gameObject)
         {
+            FindObjectOfType<AudioManager>().Play("Pickup");
+
             inventory.AddItem(item.item, 1);
             item.Owner = gameObject;
             Destroy(_other.gameObject);
             return;
         }    
-    }
-
-    /// <summary>
-    /// Called on application quit
-    /// </summary>
-    private void OnApplicationQuit()
-    {
-        inventory.inventorySlots.Clear();
     }
 }

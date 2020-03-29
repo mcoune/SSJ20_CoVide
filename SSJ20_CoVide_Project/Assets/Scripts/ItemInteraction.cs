@@ -8,7 +8,6 @@ public class ItemInteraction : MonoBehaviour
     public KeyCode rotateItems;
     public KeyCode interacteWithItem;
     public Transform throwPoint;
-    public Vector3 loadingPositinOffset;
 
     public float maxLoadTime = 3f;
     /// <summary>
@@ -66,8 +65,8 @@ public class ItemInteraction : MonoBehaviour
 
         if(loadedGameObject)
         {
-            loadedGameObject.transform.rotation = gameObject.transform.rotation;
-            loadedGameObject.transform.position = gameObject.transform.position + loadingPositinOffset;
+            loadedGameObject.transform.rotation = throwPoint.rotation;
+            loadedGameObject.transform.position = throwPoint.position;
         }
     }
 
@@ -90,6 +89,8 @@ public class ItemInteraction : MonoBehaviour
             {
                 var item = selectedItem.item.throwablePrefab;                
                 var throwable = Instantiate(item, throwPoint.position, throwPoint.rotation);
+
+                FindObjectOfType<AudioManager>().Play("ThrowItem");
 
                 var t = throwable.GetComponent<Throwable>();
                 t.owner = gameObject;
@@ -123,7 +124,7 @@ public class ItemInteraction : MonoBehaviour
         if (selectedItem.item is ResourceObject)
         {
             var itemPrefab = selectedItem.item.collectablePrefab;
-            loadedGameObject = Instantiate(itemPrefab, gameObject.transform.position + loadingPositinOffset, gameObject.transform.rotation);
+            loadedGameObject = Instantiate(itemPrefab, throwPoint.position, throwPoint.rotation);
 
             var item = loadedGameObject.GetComponent<Item>();
             if(item)

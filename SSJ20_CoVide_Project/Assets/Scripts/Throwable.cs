@@ -15,15 +15,17 @@ public class Throwable : MonoBehaviour
         rb.velocity = transform.right * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        var player = other.GetComponentInParent<Player>();
-        var targetArea = other.GetComponentInParent<TargetArea>();
-        if (player || targetArea)
-        {
-            return;
-        }
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    other.CompareTag("");
+    //    var player = other.GetComponentInParent<Player>();
+    //    var targetArea = other.GetComponentInParent<TargetArea>();
+    //    if (player || targetArea)
+    //    {
+    //        return;
+    //    }
 
-        Destroy(gameObject);
-    }
+    //    Debug.Log("Destroy");
+    //    Destroy(gameObject);
+    //}
 }

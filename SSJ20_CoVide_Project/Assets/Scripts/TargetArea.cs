@@ -22,12 +22,13 @@ public class TargetArea : MonoBehaviour
                 
         if(throwable.item == requestResource)
         {
+            FindObjectOfType<AudioManager>().Play("NpcCatch");
             scoreController.AddDelivery(1);
             scoreController.AddScore(requestResource.points);
         }
         else
         {
-            scoreController.AddScore(-1);
+            scoreController.AddScore(-requestResource.penalty);
         }
 
 
