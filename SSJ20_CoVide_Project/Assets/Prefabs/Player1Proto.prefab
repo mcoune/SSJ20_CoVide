@@ -630,7 +630,7 @@ Transform:
   m_GameObject: {fileID: 4536877769348598264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4788834957885858379}
   m_RootOrder: 1
@@ -919,6 +919,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: fac5f729d97bc98498a349c1c35d14de, type: 2}
+  backpackRenderer: {fileID: 7141300009724528407}
+  backpackEmpty: {fileID: 3442068442337511252, guid: c74e272c6e22a044a978123412762519,
+    type: 3}
+  backpackMedium: {fileID: -6093996245399293692, guid: c74e272c6e22a044a978123412762519,
+    type: 3}
+  backpackFull: {fileID: 9077195470952112843, guid: c74e272c6e22a044a978123412762519,
+    type: 3}
 --- !u!95 &153299371
 Animator:
   serializedVersion: 3
