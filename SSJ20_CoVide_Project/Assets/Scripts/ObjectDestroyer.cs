@@ -8,5 +8,9 @@ public class ObjectDestroyer : MonoBehaviour
     {
         if (collision.transform.tag != "Player")
             GameObject.Destroy(collision.gameObject);
+        if (collision.transform.tag == "FinishLine")
+        {
+
+        }
     }
 }
