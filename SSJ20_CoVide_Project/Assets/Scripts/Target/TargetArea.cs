@@ -52,8 +52,9 @@ public class TargetArea : MonoBehaviour
         }
 
         Transform parent = transform.parent;
-        var targetAreas = parent.GetComponentsInChildren<TargetArea>().ToList();
-        targetAreas.ForEach(x => x.enabled = false);
+        var targetController = parent.GetComponentInChildren<TargetController>();
+        targetController.EnableScoreing(false);
+
         itemRenderer.enabled = false;
         resourceDelivered = true;
         Destroy(other.gameObject);
