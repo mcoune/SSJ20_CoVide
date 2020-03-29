@@ -36,6 +36,11 @@ public class ObjectSpawner : MonoBehaviour
     public float minPickupTime = 1;
     public float maxPickupTime = 3;
 
+
+    public float startAreSize = 0;
+    public float minStartPickupTime = 1;
+    public float maxStartPickupTime = 3;
+
     float size;
 
     // Start is called before the first frame update
@@ -76,18 +81,24 @@ public class ObjectSpawner : MonoBehaviour
             go = GameObject.Instantiate(housesLeft[(int)(Random.value * housesLeft.Length)]);
             go.GetComponent<MapObject>().Spawn(size + nextHouseLeftToDraw, false);
             nextHouseLeftToDraw += go.GetComponent<MapObject>().height;
-            houseCount++;
-            if (houseCount < houseCounttillFinish && Random.value < 1 / 3f)
-                go.GetComponent<TargetController>().EnableScoreing(true);
+            if (startAreSize < transform.position.y)
+            {
+                houseCount++;
+                if (houseCount < houseCounttillFinish && Random.value < 0.4f)
+                    go.GetComponent<TargetController>().EnableScoreing(true);
+            }
         }
         while (transform.position.y - nextHouseRightToDraw >= 0)
         {
             go = GameObject.Instantiate(housesRight[(int)(Random.value * housesRight.Length)]);
             go.GetComponent<MapObject>().Spawn(size + nextHouseRightToDraw, false);
             nextHouseRightToDraw += go.GetComponent<MapObject>().height;
-            houseCount++;
-            if (houseCount < houseCounttillFinish && Random.value < 1 / 3f)
-                go.GetComponent<TargetController>().EnableScoreing(true);
+            if (startAreSize < transform.position.y)
+            {
+                houseCount++;
+                if (houseCount < houseCounttillFinish && Random.value < 0.4f)
+                    go.GetComponent<TargetController>().EnableScoreing(true);
+            }
         }
         while (transform.position.y - nextStreetLightToDraw >= 0)
         {
@@ -108,7 +119,15 @@ public class ObjectSpawner : MonoBehaviour
         {
             go = GameObject.Instantiate(pickups[(int)(Random.value * pickups.Length)]);
             go.transform.position = new Vector3(Mathf.Round(32 * Random.Range(-2, 2)) / 32f, Mathf.Round(32 * (transform.position.y + 16 / 2f)) / 32f, 0);
-            pickupTimer = Time.time + Random.Range(minPickupTime, maxPickupTime);
+
+            if (startAreSize < transform.position.y)
+            {
+                pickupTimer = Time.time + Random.Range(minPickupTime, maxPickupTime);
+            }
+            else
+            {
+                pickupTimer = Time.time + Random.Range(minStartPickupTime, maxStartPickupTime);
+            }
         }
 
         if (!finishLineDrawn && houseCount >= houseCounttillFinish)
