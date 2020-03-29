@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8572170722722030974}
   - component: {fileID: 4536236236251544860}
   m_Layer: 0
-  m_Name: ToiletPaper_Throwable
-  m_TagString: Untagged
+  m_Name: ToiletPaper_Projectile
+  m_TagString: Projectile
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
