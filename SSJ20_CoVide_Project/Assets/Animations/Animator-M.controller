@@ -8,7 +8,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: SpeedDiagonal
     m_EventTreshold: -1
   m_DstStateMachine: {fileID: 0}
@@ -449,7 +449,7 @@ AnimatorStateMachine:
     m_Position: {x: 660, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2299680066823261427}
-    m_Position: {x: 460, y: 410, z: 0}
+    m_Position: {x: 460, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8197981488049770634}
     m_Position: {x: 120, y: -180, z: 0}
@@ -458,7 +458,7 @@ AnimatorStateMachine:
     m_Position: {x: 90, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5848799420687925904}
-    m_Position: {x: 565, y: 605, z: 0}
+    m_Position: {x: 460, y: 270, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
