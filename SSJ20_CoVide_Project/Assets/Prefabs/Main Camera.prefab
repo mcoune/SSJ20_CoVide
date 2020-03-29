@@ -337,15 +337,22 @@ MonoBehaviour:
   - {fileID: 2076413912816605961, guid: 194e9abf63e403041b73f747ae8f0c4e, type: 3}
   streetSide: {fileID: 4100287878561732329, guid: 194e9abf63e403041b73f747ae8f0c4e,
     type: 3}
-  housesLeft: []
-  housesRight: []
+  housesLeft:
+  - {fileID: 4347654167875901676, guid: 52545dc485aa06741a3d98aaff503390, type: 3}
+  - {fileID: 8070675927522266156, guid: 616849b93e01d544f9daaa4ba8d32ec7, type: 3}
+  housesRight:
+  - {fileID: 6484786552624529379, guid: 0bd5c60f6965d374e87b98fa508382ba, type: 3}
+  - {fileID: 662636884412106872, guid: f7ec5474375c3774291eb175ebff1fc8, type: 3}
   obstacles:
-  - {fileID: 5502878375793610057, guid: 5daea9135b2d5bd48828d3b48a7fc1c8, type: 3}
+  - {fileID: 609519236054245941, guid: 16e6a3b87ce209a4881b6af9799f99b1, type: 3}
   minObstacleTime: 1
   maxObstacleTime: 3
-  pickup: []
-  minPickupTime: 1
-  maxPickupTime: 3
+  pickups:
+  - {fileID: 86478734693667092, guid: 34f7231e43aa6344aaec747f4ae30919, type: 3}
+  - {fileID: 5435901638606756529, guid: b38f32d4af57aa940bcefcc1a87a7376, type: 3}
+  - {fileID: 118669003592533160, guid: 6369de2b4ddb3154aa7fc2af1a6306b0, type: 3}
+  minPickupTime: 3
+  maxPickupTime: 7
 --- !u!50 &8500451817021375669
 Rigidbody2D:
   serializedVersion: 4
