@@ -80,7 +80,7 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
-  - name: PlaxyerFalls
+  - name: PlayerFalls
     clip: {fileID: 8300000, guid: 859e092edaa79584c84f6098348f0287, type: 3}
     volume: 1
     pitch: 0
