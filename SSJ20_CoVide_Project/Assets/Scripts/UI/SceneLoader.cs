@@ -8,10 +8,23 @@ public class SceneLoader : MonoBehaviour
     public ScoreObject scoreObject1;
     public ScoreObject scoreObject2;
 
-
-    public void LoadScene(int Scene)
+    void Update()
     {
-        SceneManager.LoadScene(Scene);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RestartGame();
+        }
+
+    }
+
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 
     public void Quit()
