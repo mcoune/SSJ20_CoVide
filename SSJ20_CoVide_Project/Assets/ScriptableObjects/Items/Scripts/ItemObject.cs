@@ -7,7 +7,6 @@ using UnityEngine;
 public abstract class ItemObject : ScriptableObject
 {
     public int points = 1;
-    public int penaltiy = 1;
     public GameObject throwablePrefab;
     public GameObject collectablePrefab;
     public ItemType type;    
