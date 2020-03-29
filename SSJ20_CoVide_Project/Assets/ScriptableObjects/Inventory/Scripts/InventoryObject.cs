@@ -46,6 +46,7 @@ public class InventoryObject : ScriptableObject
             return;
         }
 
+        FindObjectOfType<AudioManager>().Play("ChangeItem");
         var tempSlot = inventorySlots.First();
         inventorySlots.RemoveAt(0);
         inventorySlots.Add(tempSlot);
