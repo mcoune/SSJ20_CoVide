@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetArea : MonoBehaviour
-{    
+{
     public int ScoreMultiplier;
 
     [HideInInspector]
@@ -36,13 +36,13 @@ public class TargetArea : MonoBehaviour
             return;
         }
 
-        if(!resourceDelivered && scoreIsEnabled)
+        if (!resourceDelivered && scoreIsEnabled)
         {
             if (throwable.item == requestResource)
             {
                 scoreController.AddDelivery(1);
                 scoreController.AddScore(requestResource.points + ScoreMultiplier);
-                
+
             }
             else
             {
@@ -54,7 +54,8 @@ public class TargetArea : MonoBehaviour
         var targetController = parent.GetComponentInChildren<TargetController>();
         targetController.EnableScoreing(false);
 
-        itemRenderer.enabled = false;
+        if (itemRenderer)
+            itemRenderer.enabled = false;
         resourceDelivered = true;
         Destroy(other.gameObject);
     }
