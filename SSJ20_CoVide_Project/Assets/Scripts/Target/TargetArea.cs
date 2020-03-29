@@ -10,6 +10,8 @@ public class TargetArea : MonoBehaviour
     public ItemObject requestResource;
     public SpriteRenderer itemRenderer;
 
+    private bool resourceDelivered = false;
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag != "Projectile")
@@ -29,17 +31,21 @@ public class TargetArea : MonoBehaviour
             return;
         }
 
-        if (throwable.item == requestResource)
+        if(!resourceDelivered)
         {
-            scoreController.AddDelivery(1);
-            scoreController.AddScore(requestResource.points + ScoreMultiplier);
-        }
-        else
-        {
-            scoreController.AddScore(-requestResource.penalty);
+            if (throwable.item == requestResource)
+            {
+                scoreController.AddDelivery(1);
+                scoreController.AddScore(requestResource.points + ScoreMultiplier);
+            }
+            else
+            {
+                scoreController.AddScore(-requestResource.penalty);
+            }
         }
 
         itemRenderer.enabled = false;
+        resourceDelivered = true;
         Destroy(other.gameObject);
     }
 }
