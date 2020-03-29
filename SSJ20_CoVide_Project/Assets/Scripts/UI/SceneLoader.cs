@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public ScoreObject scoreObject1;
     public ScoreObject scoreObject2;
+    [SerializeField] private int  sceneToOpen ;
 
     void Update()
     {
@@ -24,7 +25,7 @@ public class SceneLoader : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(sceneToOpen);
     }
 
     public void Quit()
