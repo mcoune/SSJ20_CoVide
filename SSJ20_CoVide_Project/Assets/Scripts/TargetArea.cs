@@ -28,10 +28,10 @@ public class TargetArea : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("NpcWrongCatch");
             scoreController.AddScore(-requestResource.penalty);
         }
-
-
+        
         Destroy(other.gameObject);
     }
 }
