@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0.96875
-  leftSpawnBorder: -2
-  rightSpawnBorder: 2
+  leftSpawnBorder: 2.25
+  rightSpawnBorder: 2.25
 --- !u!212 &1997935090855047439
 SpriteRenderer:
   m_ObjectHideFlags: 0
