@@ -28,11 +28,6 @@ public class InventoryDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inventory.inventorySlots.Count < 1)
-        {
-            return;
-        }
-
         SetImage(0, selectedItem);
         SetAmount(0);
         SetImage(1, nextItem);
@@ -46,14 +41,18 @@ public class InventoryDisplay : MonoBehaviour
     /// <param name="_image"></param>
     private void SetImage(int _index, Image _image)
     {
+        if (inventory.inventorySlots.Count == 0)
+        {
+            _image.sprite = defaultSprite;
+            return;
+        }
+
         if (inventory.inventorySlots.Count >= _index + 1)
         {
             var renderer = inventory.inventorySlots[_index].item.collectablePrefab.GetComponent<SpriteRenderer>();
             _image.sprite = renderer.sprite;
             return;
-        }
-
-        _image.sprite = defaultSprite;        
+        }           
     }
 
     /// <summary>
@@ -62,6 +61,12 @@ public class InventoryDisplay : MonoBehaviour
     /// <param name="_amount"></param>
     private void SetAmount(int _index)
     {
+        if(inventory.inventorySlots.Count == 0)
+        {
+            amountText.text = "0";
+            return;
+        }
+
         if (inventory.inventorySlots.Count >= _index + 1)
         {
             amountText.text = inventory.inventorySlots[_index].amount.ToString();
