@@ -32,12 +32,4 @@ public class Player : MonoBehaviour
             return;
         }    
     }
-
-    /// <summary>
-    /// Called on application quit
-    /// </summary>
-    private void OnApplicationQuit()
-    {
-        inventory.inventorySlots.Clear();
-    }
 }
