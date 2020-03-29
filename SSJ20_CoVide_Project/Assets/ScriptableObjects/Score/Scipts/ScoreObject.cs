@@ -10,4 +10,5 @@ public class ScoreObject : ScriptableObject
 {
     public int score;
     public int deliveries;
+    public int strikes;
 }

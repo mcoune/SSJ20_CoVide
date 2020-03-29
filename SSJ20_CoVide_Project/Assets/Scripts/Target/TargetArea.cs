@@ -14,7 +14,8 @@ public class TargetArea : MonoBehaviour
 
     public SpriteRenderer itemRenderer;
 
-    private bool resourceDelivered = false;
+    [HideInInspector]
+    public bool resourceDelivered = false;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
