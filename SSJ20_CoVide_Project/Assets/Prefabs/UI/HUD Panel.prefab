@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: fec3d7cc45fe97842884541dc4d3ef89, type: 2}
-  defaultSprite: {fileID: 21300000, guid: 138fe2f5479a0414d8369135556f8292, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 1d7e966fc24bf8940bfa64e437855a85, type: 3}
   selectedItem: {fileID: 1131055530161183514}
   nextItem: {fileID: 1131055530130892080}
   nextNextItem: {fileID: 1131055531221750590}
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: fac5f729d97bc98498a349c1c35d14de, type: 2}
-  defaultSprite: {fileID: 21300000, guid: 138fe2f5479a0414d8369135556f8292, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 1d7e966fc24bf8940bfa64e437855a85, type: 3}
   selectedItem: {fileID: 1131055530347928812}
   nextItem: {fileID: 1131055531260814531}
   nextNextItem: {fileID: 1131055530137658743}
