@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 86478734693667094}
   - component: {fileID: 86478734693667112}
   - component: {fileID: 822114938988888604}
+  - component: {fileID: 5719557382599988000}
   m_Layer: 1
   m_Name: Food_Pickup
   m_TagString: Pickup
@@ -113,3 +114,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
+--- !u!95 &5719557382599988000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86478734693667092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35cda955141b21848b78a5f1fbe1894f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
