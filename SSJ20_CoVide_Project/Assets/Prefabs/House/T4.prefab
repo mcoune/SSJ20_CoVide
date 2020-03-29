@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreMultiplier: 0
   requestResource: {fileID: 11400000, guid: d791b8592781ea141b9429dc8359a21f, type: 2}
-  itemRenderer: {fileID: 0}
+  scoreIsEnabled: 0
+  itemRenderer: {fileID: 5959530249527482859}
 --- !u!61 &7366185700306398780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223,7 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreMultiplier: 0
   requestResource: {fileID: 11400000, guid: d791b8592781ea141b9429dc8359a21f, type: 2}
-  itemRenderer: {fileID: 0}
+  scoreIsEnabled: 0
+  itemRenderer: {fileID: 5959530249527482859}
 --- !u!61 &1104643021544512593
 BoxCollider2D:
   m_ObjectHideFlags: 0

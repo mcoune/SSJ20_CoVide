@@ -13,9 +13,12 @@ public class CameraMover : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameObject[] players=GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject p in players)
-            p.GetComponent<CharacterMovement>().camSpeed = speed;
+        {
+            if (p.name != "LowerWall")
+                p.GetComponent<CharacterMovement>().camSpeed = speed;
+        }
     }
 
     // Update is called once per frame

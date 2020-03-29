@@ -51,7 +51,6 @@ public class CharacterMovement : MonoBehaviour
 
         animator.SetFloat("Speed", speed.y);
         animator.SetFloat("SpeedDiagonal", speed.x);
-        animator.SetBool("DrivesLeft", speed.x < 0);
 
         rb.velocity = speed;
     }

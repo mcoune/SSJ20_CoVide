@@ -23,6 +23,9 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject[] housesRight;
     private float nextHouseRightToDraw;
 
+    public GameObject[] streetLights;
+    private float nextStreetLightToDraw;
+
     public GameObject[] obstacles;
     private float obstacleTimer;
     public float minObstacleTime = 1;
@@ -43,6 +46,7 @@ public class ObjectSpawner : MonoBehaviour
         nextStreetToDraw = -2 * size;
         nextHouseLeftToDraw = -2 * size;
         nextHouseRightToDraw = -2 * size;
+        nextStreetLightToDraw = -2 * size;
 
         while (transform.position.y - nextHouseLeftToDraw >= 0)
         {
@@ -81,6 +85,15 @@ public class ObjectSpawner : MonoBehaviour
             nextHouseRightToDraw += go.GetComponent<MapObject>().height;
             houseCount++;
         }
+        while (transform.position.y - nextStreetLightToDraw >= 0)
+        {
+            go = GameObject.Instantiate(streetLights[0]);
+            go.GetComponent<MapObject>().Spawn(size + transform.position.y, true);
+            go = GameObject.Instantiate(streetLights[1]);
+            go.GetComponent<MapObject>().Spawn(size + transform.position.y, true);
+
+            nextStreetLightToDraw += 10f;
+        }
         if (obstacleTimer < Time.time)
         {
             go = GameObject.Instantiate(obstacles[(int)(Random.value * obstacles.Length)]);
@@ -100,10 +113,12 @@ public class ObjectSpawner : MonoBehaviour
             {
                 go = CreateSingleSprite(finishLine);
                 go.transform.position = new Vector3(0.5f * i + 0.25f, Mathf.Round(4 * (transform.position.y + size + 0.75f)) / 4f, -0.2f);
+                if (!finishLineDrawn)
+                    go.transform.tag = "FinishLine";
                 go = CreateSingleSprite(finishLine);
                 go.transform.position = new Vector3(0.5f * i + 0.25f, Mathf.Round(4 * (transform.position.y + size + 1.25f)) / 4f, -0.2f);
+                finishLineDrawn = true;
             }
-            finishLineDrawn = true;
         }
     }
 

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pickup
   - Projectile
+  - Hand
+  - FinishLine
   layers:
   - Default
   - TransparentFX

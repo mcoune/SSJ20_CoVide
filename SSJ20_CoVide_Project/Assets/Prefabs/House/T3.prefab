@@ -243,7 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreMultiplier: 0
   requestResource: {fileID: 0}
-  itemRenderer: {fileID: 0}
+  scoreIsEnabled: 0
+  itemRenderer: {fileID: 6574507799490880698}
 --- !u!61 &7877575246098042268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -338,7 +339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreMultiplier: 0
   requestResource: {fileID: 0}
-  itemRenderer: {fileID: 0}
+  scoreIsEnabled: 0
+  itemRenderer: {fileID: 6574507799490880698}
 --- !u!61 &3743893018661892623
 BoxCollider2D:
   m_ObjectHideFlags: 0

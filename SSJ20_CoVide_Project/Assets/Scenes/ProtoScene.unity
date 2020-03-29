@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!95 &153299371 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 153299371, guid: 59289f22cc0e8d740b8193de9d9bf300,
-    type: 3}
-  m_PrefabInstance: {fileID: 6456944891822168012}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &189541572 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 189541572, guid: 334340299b8e96943ab193f85bab0928,
-    type: 3}
-  m_PrefabInstance: {fileID: 8202713223217537116}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &721687107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,6 +556,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 969825442, guid: 59289f22cc0e8d740b8193de9d9bf300, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 969825442, guid: 59289f22cc0e8d740b8193de9d9bf300, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 969825443, guid: 59289f22cc0e8d740b8193de9d9bf300, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4788834957885858379, guid: 59289f22cc0e8d740b8193de9d9bf300,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -623,16 +623,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5996624735341444493, guid: 59289f22cc0e8d740b8193de9d9bf300,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 153299371}
     - target: {fileID: 7389234141321235373, guid: 59289f22cc0e8d740b8193de9d9bf300,
         type: 3}
       propertyPath: m_Name
       value: Player1Proto
       objectReference: {fileID: 0}
+    - target: {fileID: 8846942243162912121, guid: 59289f22cc0e8d740b8193de9d9bf300,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5333053556372101157, guid: c93028dfae61007419d4252b011a64f9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59289f22cc0e8d740b8193de9d9bf300, type: 3}
 --- !u!1001 &8202713223217537116
@@ -699,24 +700,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202696167512520414, guid: 334340299b8e96943ab193f85bab0928,
         type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202696167512520414, guid: 334340299b8e96943ab193f85bab0928,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202696167512520414, guid: 334340299b8e96943ab193f85bab0928,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859635561802610677, guid: 334340299b8e96943ab193f85bab0928,
-        type: 3}
-      propertyPath: animator
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 189541572}
+      objectReference: {fileID: 8194323049831475578, guid: c93028dfae61007419d4252b011a64f9,
+        type: 3}
     - target: {fileID: 6961511463036730875, guid: 334340299b8e96943ab193f85bab0928,
         type: 3}
       propertyPath: m_Name
