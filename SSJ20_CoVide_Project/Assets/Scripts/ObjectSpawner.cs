@@ -52,6 +52,7 @@ public class ObjectSpawner : MonoBehaviour
         nextHouseLeftToDraw = -2 * size;
         nextHouseRightToDraw = -2 * size;
         nextStreetLightToDraw = -2 * size;
+        pickupTimer = Time.time;
 
         while (transform.position.y - nextHouseLeftToDraw >= 0)
         {
@@ -129,7 +130,7 @@ public class ObjectSpawner : MonoBehaviour
                 pickupTimer = Time.time + Random.Range(minStartPickupTime, maxStartPickupTime);
             }
         }
-
+        print(transform.position.y);
         if (!finishLineDrawn && houseCount >= houseCounttillFinish)
         {
             for (int i = -5; i < 5; i++)
